@@ -10,6 +10,7 @@ public class BlowerBehavior : MonoBehaviour
 	float breathTimer;
 	public float releaseThreshold;
 	float releaseTimer;
+	float lastX;
 	Rigidbody2D rigidbody;
     // Start is called before the first frame update
     void Start()
@@ -26,15 +27,20 @@ public class BlowerBehavior : MonoBehaviour
 			if(curBubble) {
 				if(releaseTimer > 0) {
 					ReleaseBubble();
-					
 				} else {
 					breathTimer += Time.deltaTime;
 					BlowUpBubble();
+					if(Input.mousePosition.x > lastX) transform.Rotate(0, 0, 1);
+					else if(Input.mousePosition.x < lastX) transform.Rotate(0, 0, -1);
+					lastX = Input.mousePosition.x;
 				}
-			} else {
+			} else if(Input.GetMouseButtonDown(0)){
 				curBubble = Instantiate<GameObject>(bubblePrefab);
 				curBubble.transform.parent = transform;
-				curBubble.transform.localPosition = Vector3.zero + (Vector3.up * 0.2f);
+				curBubble.transform.localPosition = Vector3.up * 0.2f;
+				lastX = Input.mousePosition.x;
+				curBubble.transform.position += new Vector3(rigidbody.velocity.x, rigidbody.velocity.y, 0);
+				curBubble.GetComponent<Rigidbody2D>().velocity = rigidbody.velocity;
 			}
 		} else if(Input.GetMouseButtonUp(0) && curBubble) {
 			releaseTimer = releaseThreshold;
@@ -47,8 +53,7 @@ public class BlowerBehavior : MonoBehaviour
     }
 	
 	void BlowUpBubble() {
-		float curScalar = curBubble.transform.localScale.x;
-		curScalar = breath.Evaluate(breathTimer);
+		float curScalar = breath.Evaluate(breathTimer);
 		curBubble.transform.localScale = new Vector3(curScalar, curScalar, curScalar);
 	}
 

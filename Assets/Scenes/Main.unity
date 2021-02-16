@@ -296,6 +296,7 @@ GameObject:
   - component: {fileID: 1759005863}
   - component: {fileID: 1759005862}
   - component: {fileID: 1759005861}
+  - component: {fileID: 1759005864}
   m_Layer: 0
   m_Name: BubbleBlower
   m_TagString: Untagged
@@ -321,8 +322,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
+      time: 0.00531462
+      value: 0.18020606
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -330,10 +331,37 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 2
-      outSlope: 2
+      time: 0.6349987
+      value: 0.57582617
+      inSlope: 0.008771985
+      outSlope: 0.008771985
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.62226456
+    - serializedVersion: 3
+      time: 1.5972396
+      value: 0.85955805
+      inSlope: -0.020208124
+      outSlope: -0.020208124
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.50711334
+    - serializedVersion: 3
+      time: 2.995186
+      value: 1.1437488
+      inSlope: 0.045914315
+      outSlope: 0.045914315
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 4.041556
+      value: 1.4921025
+      inSlope: 0.2811441
+      outSlope: 0.2811441
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -341,6 +369,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  releaseThreshold: 0.2
 --- !u!212 &1759005862
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -405,3 +434,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1759005864
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759005860}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0.4
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
