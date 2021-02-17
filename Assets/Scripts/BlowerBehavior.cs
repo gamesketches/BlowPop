@@ -86,6 +86,10 @@ public class BlowerBehavior : MonoBehaviour
 		curBubble.GetComponent<Rigidbody2D>().velocity = rigidbody.velocity;
 	}
 
+	public void UpdateDrag(float newDrag) {
+		rigidbody.drag = newDrag;
+	}
+
 	bool ButtonActive() {
 		return Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space);
 	}
