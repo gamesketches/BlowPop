@@ -25,16 +25,12 @@ public class BlowerBehavior : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-
 		BubbleBlowingLogic();
-
-		//BubbleBlowingLogic2();
-
 	}
 
 	void BubbleBlowingLogic() {
 		releaseTimer -= Time.deltaTime;
-		if (Input.GetMouseButton(0))
+		if (ButtonActive())
 		{
 			if (curBubble)
 			{
@@ -50,10 +46,10 @@ public class BlowerBehavior : MonoBehaviour
 					else if(Input.mousePosition.x < lastX) transform.Rotate(0, 0, -rotateSpeed * Time.deltaTime);
 					lastX = Input.mousePosition.x;
 				}
-			} else if(Input.GetMouseButtonDown(0)){
+			} else if(ButtonPressed()){
 				CreateBubble();
 							}
-		} else if(Input.GetMouseButtonUp(0) && curBubble) {
+		} else if(ButtonReleased() && curBubble) {
 			if(releaseToFire) ReleaseBubble();
 			else releaseTimer = releaseThreshold;
 		} else {
@@ -62,41 +58,6 @@ public class BlowerBehavior : MonoBehaviour
 				BlowUpBubble();
 			}
 		}
-	}
-
-	void BubbleBlowingLogic2()
-	{
-		releaseTimer -= Time.deltaTime;
-		if (Input.GetKey(KeyCode.Space))
-		{
-			if (curBubble)
-			{
-					breathTimer += Time.deltaTime;
-					BlowUpBubble();
-			}
-			else if (Input.GetKeyDown(KeyCode.Space))
-			{
-				curBubble = Instantiate<GameObject>(bubblePrefab);
-				curBubble.transform.parent = transform;
-				curBubble.transform.localPosition = Vector3.up * 0.2f;
-				//lastX = Input.mousePosition.x;
-				curBubble.transform.position += new Vector3(rigidbody.velocity.x, rigidbody.velocity.y, 0);
-				curBubble.GetComponent<Rigidbody2D>().velocity = rigidbody.velocity;
-			}
-		}
-		else if (Input.GetKeyUp(KeyCode.Space) && curBubble)
-		{
-			ReleaseBubble();
-		}
-		else
-		{
-			if (curBubble)
-			{
-				breathTimer -= Time.deltaTime;
-				BlowUpBubble();
-			}
-		}
-
 	}
 
 	void BlowUpBubble() {
@@ -125,4 +86,15 @@ public class BlowerBehavior : MonoBehaviour
 		curBubble.GetComponent<Rigidbody2D>().velocity = rigidbody.velocity;
 	}
 
+	bool ButtonActive() {
+		return Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space);
+	}
+
+	bool ButtonPressed() {
+		return Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space);
+	}
+
+	bool ButtonReleased() {
+		return Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space);
+	}
 }
