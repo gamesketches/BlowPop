@@ -11,8 +11,10 @@ public class BubbleBehavior : MonoBehaviour
     public float shake_intensity;
     Vector3 startPos;
     HingeJoint2D myJoint;
-    public bool haveCollided;
+    bool haveCollided;
+
     BubbleBehavior myConnectedBubble;
+    bool beenPopped;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -63,11 +65,15 @@ public class BubbleBehavior : MonoBehaviour
     }
 
     void PopMyself() {
-        if (myConnectedBubble) {
-            myConnectedBubble.PopMyself();
+        if (!beenPopped)
+        {
+            if (myConnectedBubble != null)
+            {
+                myConnectedBubble.PopMyself();
+            }
+            beenPopped = true;
+            gameObject.SetActive(false);
         }
-        
-        Destroy(gameObject);
     }
 
     // Update is called once per frame
