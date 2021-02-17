@@ -25,10 +25,14 @@ public class BlowerBehavior : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+<<<<<<< Updated upstream
 		BubbleLogic();
+=======
+		BubbleBlowingLogic2();
+>>>>>>> Stashed changes
 	}
 
-	void BubbleLogic() {
+	void BubbleBlowingLogic() {
 		releaseTimer -= Time.deltaTime;
 		if (Input.GetMouseButton(0))
 		{
@@ -60,8 +64,9 @@ public class BlowerBehavior : MonoBehaviour
 		}
 	}
 
-	void BubbleLogic2()
+	void BubbleBlowingLogic2()
 	{
+		releaseTimer -= Time.deltaTime;
 		if (Input.GetKey(KeyCode.Space))
 		{
 			if (curBubble)
@@ -83,7 +88,15 @@ public class BlowerBehavior : MonoBehaviour
 		{
 			ReleaseBubble();
 		}
-		
+		else
+		{
+			if (curBubble)
+			{
+				breathTimer -= Time.deltaTime;
+				BlowUpBubble();
+			}
+		}
+
 	}
 
 	void BlowUpBubble() {
