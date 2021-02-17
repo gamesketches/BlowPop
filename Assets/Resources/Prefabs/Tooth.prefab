@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7032707483899453280}
   - component: {fileID: 6331501844473329938}
   - component: {fileID: 1598923348923427881}
+  - component: {fileID: 8892769518739584424}
   m_Layer: 0
   m_Name: Tooth
   m_TagString: Tooth
@@ -130,3 +131,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8892769518739584424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6251183388910052461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2e89b7e1b7024e40bb0d5e25689243f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToCenter: 1
