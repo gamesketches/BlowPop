@@ -25,7 +25,7 @@ public class BlowerBehavior : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		BubbleLogic2();
+		BubbleLogic();
 	}
 
 	void BubbleLogic() {
@@ -42,7 +42,6 @@ public class BlowerBehavior : MonoBehaviour
 				{
 					breathTimer += Time.deltaTime;
 					BlowUpBubble();
-<<<<<<< HEAD
 					if(Input.mousePosition.x > lastX) transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
 					else if(Input.mousePosition.x < lastX) transform.Rotate(0, 0, -rotateSpeed * Time.deltaTime);
 					lastX = Input.mousePosition.x;
@@ -55,31 +54,6 @@ public class BlowerBehavior : MonoBehaviour
 			else releaseTimer = releaseThreshold;
 		} else {
 			if(curBubble) {
-=======
-					if (Input.mousePosition.x > lastX) transform.Rotate(0, 0, 1);
-					else if (Input.mousePosition.x < lastX) transform.Rotate(0, 0, -1);
-					lastX = Input.mousePosition.x;
-				}
-			}
-			else if (Input.GetMouseButtonDown(0))
-			{
-				curBubble = Instantiate<GameObject>(bubblePrefab);
-				curBubble.transform.parent = transform;
-				curBubble.transform.localPosition = Vector3.up * 0.2f;
-				lastX = Input.mousePosition.x;
-				curBubble.transform.position += new Vector3(rigidbody.velocity.x, rigidbody.velocity.y, 0);
-				curBubble.GetComponent<Rigidbody2D>().velocity = rigidbody.velocity;
-			}
-		}
-		else if (Input.GetMouseButtonUp(0) && curBubble)
-		{
-			releaseTimer = releaseThreshold;
-		}
-		else
-		{
-			if (curBubble)
-			{
->>>>>>> 3a55a155a1076b6d9548dc91534b1557f63d2cef
 				breathTimer -= Time.deltaTime;
 				BlowUpBubble();
 			}
