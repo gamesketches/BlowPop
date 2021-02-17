@@ -12,12 +12,19 @@ public class BubbleBehavior : MonoBehaviour
     Vector3 startPos;
     HingeJoint2D myJoint;
     public bool haveCollided;
+    BubbleBehavior myConnectedBubble;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Blower")
         {
 
+            
+        }
+
+        if (collision.gameObject.tag == "Poppers")
+        {
+            PopMyself();
         }
 
         if (collision.gameObject.tag == "Bubble")
@@ -28,6 +35,7 @@ public class BubbleBehavior : MonoBehaviour
             {
                 myJoint = gameObject.AddComponent<HingeJoint2D>();
                 myJoint.connectedBody = collision.gameObject.GetComponent<Rigidbody2D>();
+                myConnectedBubble = myJoint.connectedBody.GetComponent<BubbleBehavior>();
                 myJoint.anchor = new Vector2(0, 0);
                 myJoint.connectedAnchor = gameObject.GetComponent<CircleCollider2D>().ClosestPoint(myJoint.connectedBody.transform.position);
                 //myJoint.useMotor = true;
@@ -52,6 +60,14 @@ public class BubbleBehavior : MonoBehaviour
         circCol = gameObject.GetComponent<CircleCollider2D>();
         circCol.radius = Random.Range(.09f, .11f);
         
+    }
+
+    void PopMyself() {
+        if (myConnectedBubble) {
+            myConnectedBubble.PopMyself();
+        }
+        
+        Destroy(gameObject);
     }
 
     // Update is called once per frame
