@@ -13,29 +13,40 @@ public class BlowerBehavior : MonoBehaviour
 	float lastX;
 	Rigidbody2D rigidbody;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        breathTimer = 0;
+	// Start is called before the first frame update
+	void Start()
+	{
+		breathTimer = 0;
 		rigidbody = GetComponent<Rigidbody2D>();
-    }
+	}
 
-    // Update is called once per frame
-    void Update()
-    {
+	// Update is called once per frame
+	void Update()
+	{
+		BubbleLogic2();
+	}
+
+	void BubbleLogic() {
 		releaseTimer -= Time.deltaTime;
-        if(Input.GetMouseButton(0)) {
-			if(curBubble) {
-				if(releaseTimer > 0) {
+		if (Input.GetMouseButton(0))
+		{
+			if (curBubble)
+			{
+				if (releaseTimer > 0)
+				{
 					ReleaseBubble();
-				} else {
+				}
+				else
+				{
 					breathTimer += Time.deltaTime;
 					BlowUpBubble();
-					if(Input.mousePosition.x > lastX) transform.Rotate(0, 0, 1);
-					else if(Input.mousePosition.x < lastX) transform.Rotate(0, 0, -1);
+					if (Input.mousePosition.x > lastX) transform.Rotate(0, 0, 1);
+					else if (Input.mousePosition.x < lastX) transform.Rotate(0, 0, -1);
 					lastX = Input.mousePosition.x;
 				}
-			} else if(Input.GetMouseButtonDown(0)){
+			}
+			else if (Input.GetMouseButtonDown(0))
+			{
 				curBubble = Instantiate<GameObject>(bubblePrefab);
 				curBubble.transform.parent = transform;
 				curBubble.transform.localPosition = Vector3.up * 0.2f;
@@ -43,27 +54,60 @@ public class BlowerBehavior : MonoBehaviour
 				curBubble.transform.position += new Vector3(rigidbody.velocity.x, rigidbody.velocity.y, 0);
 				curBubble.GetComponent<Rigidbody2D>().velocity = rigidbody.velocity;
 			}
-		} else if(Input.GetMouseButtonUp(0) && curBubble) {
+		}
+		else if (Input.GetMouseButtonUp(0) && curBubble)
+		{
 			releaseTimer = releaseThreshold;
-		} else {
-			if(curBubble) {
+		}
+		else
+		{
+			if (curBubble)
+			{
 				breathTimer -= Time.deltaTime;
 				BlowUpBubble();
 			}
 		}
-    }
-	
+	}
+
+	void BubbleLogic2()
+	{
+		if (Input.GetKey(KeyCode.Space))
+		{
+			if (curBubble)
+			{
+					breathTimer += Time.deltaTime;
+					BlowUpBubble();
+			}
+			else if (Input.GetKeyDown(KeyCode.Space))
+			{
+				curBubble = Instantiate<GameObject>(bubblePrefab);
+				curBubble.transform.parent = transform;
+				curBubble.transform.localPosition = Vector3.up * 0.2f;
+				//lastX = Input.mousePosition.x;
+				curBubble.transform.position += new Vector3(rigidbody.velocity.x, rigidbody.velocity.y, 0);
+				curBubble.GetComponent<Rigidbody2D>().velocity = rigidbody.velocity;
+			}
+		}
+		else if (Input.GetKeyUp(KeyCode.Space) && curBubble)
+		{
+			ReleaseBubble();
+		}
+		
+	}
+
 	void BlowUpBubble() {
 		float curScalar = breath.Evaluate(breathTimer);
 		curBubble.transform.localScale = new Vector3(curScalar, curScalar, curScalar);
+		
 	}
 
 	void ReleaseBubble() {
 		curBubble.transform.parent = null;
 		Vector3 movementVector = curBubble.transform.position - transform.position;
-		curBubble.GetComponent<Rigidbody2D>().AddForce(movementVector * 2, ForceMode2D.Impulse);
+		curBubble.GetComponent<Rigidbody2D>().AddForce(movementVector, ForceMode2D.Impulse);
 		rigidbody.AddForce(-movementVector, ForceMode2D.Impulse);
 		curBubble = null;
 		releaseTimer = 0;
+		
 	}
 }
