@@ -25,11 +25,11 @@ public class BlowerBehavior : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-<<<<<<< Updated upstream
-		BubbleLogic();
-=======
-		BubbleBlowingLogic2();
->>>>>>> Stashed changes
+
+		BubbleBlowingLogic();
+
+		//BubbleBlowingLogic2();
+
 	}
 
 	void BubbleBlowingLogic() {
