@@ -57,17 +57,10 @@ public class BubbleBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (haveCollided)
-        //{
-        //    Debug.DrawLine(gameObject.transform.position, gameObject.GetComponent<CircleCollider2D>().ClosestPoint(myJoint.connectedBody.transform.position));
-        //}
-
-
         if (haveCollided)
         {
             Wobble();
         }
-          
     }
 
     void Wobble() {
