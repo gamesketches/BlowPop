@@ -12,6 +12,7 @@ public class BlowerBehavior : MonoBehaviour
 	float releaseTimer;
 	float lastX;
 	Rigidbody2D rigidbody;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,7 +61,7 @@ public class BlowerBehavior : MonoBehaviour
 	void ReleaseBubble() {
 		curBubble.transform.parent = null;
 		Vector3 movementVector = curBubble.transform.position - transform.position;
-		curBubble.GetComponent<Rigidbody2D>().AddForce(movementVector, ForceMode2D.Impulse);
+		curBubble.GetComponent<Rigidbody2D>().AddForce(movementVector * 2, ForceMode2D.Impulse);
 		rigidbody.AddForce(-movementVector, ForceMode2D.Impulse);
 		curBubble = null;
 		releaseTimer = 0;
