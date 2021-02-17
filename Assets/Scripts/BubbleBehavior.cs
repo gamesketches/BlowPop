@@ -30,11 +30,11 @@ public class BubbleBehavior : MonoBehaviour
                 myJoint.connectedBody = collision.gameObject.GetComponent<Rigidbody2D>();
                 myJoint.anchor = new Vector2(0, 0);
                 myJoint.connectedAnchor = gameObject.GetComponent<CircleCollider2D>().ClosestPoint(myJoint.connectedBody.transform.position);
-                myJoint.useMotor = true;
-                JointMotor2D myMotor = myJoint.motor;
-                myMotor.motorSpeed = Random.Range(-10.0f, 10.0f);
-                myJoint.motor = myMotor;
-                myJoint.autoConfigureConnectedAnchor = false;
+                //myJoint.useMotor = true;
+                //JointMotor2D myMotor = myJoint.motor;
+                //myMotor.motorSpeed = Random.Range(-10.0f, 10.0f);
+                //myJoint.motor = myMotor;
+               // myJoint.autoConfigureConnectedAnchor = false;
                 haveCollided = true;
             }
            
