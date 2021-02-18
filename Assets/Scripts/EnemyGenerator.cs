@@ -26,9 +26,9 @@ public class EnemyGenerator : MonoBehaviour
     }
 
 	void CreateEnemy() {
-		GameObject newEnemy = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/Tooth"));
-		newEnemy.transform.parent = background.transform;
-		newEnemy.transform.localPosition = Vector3.zero;
+		GameObject newEnemy = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/Tooth"), transform.position, Quaternion.identity);
+		//newEnemy.transform.parent = background.transform;
+		//newEnemy.transform.localPosition = Vector3.zero;
 		newEnemy.transform.Rotate(0, 0, Random.value * 360);
 		newEnemy.transform.position = newEnemy.transform.up.normalized * spawnDistanceScalar;
 		newEnemy.transform.parent = null;
