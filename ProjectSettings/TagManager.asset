@@ -8,6 +8,8 @@ TagManager:
   - Bubble
   - Poppers
   - Tooth
+  - Arena
+  - Sticky
   layers:
   - Default
   - TransparentFX

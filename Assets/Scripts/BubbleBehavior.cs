@@ -15,6 +15,7 @@ public class BubbleBehavior : MonoBehaviour
 
     BubbleBehavior myConnectedBubble;
     bool beenPopped;
+    public GameObject residue;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -23,6 +24,13 @@ public class BubbleBehavior : MonoBehaviour
 
             
         }
+
+        if (collision.gameObject.tag == "Tooth")
+        {
+            PopMyself();
+            BubbleResidueOnPop(collision.transform.position);
+        }
+
 
         if (collision.gameObject.tag == "Poppers")
         {
@@ -64,16 +72,19 @@ public class BubbleBehavior : MonoBehaviour
         
     }
 
+
     void PopMyself() {
         if (!beenPopped)
         {
-            if (myConnectedBubble != null)
-            {
-                myConnectedBubble.PopMyself();
-            }
+            //if (myConnectedBubble != null)
+            //{
+            //    myConnectedBubble.PopMyself();
+            //}
             beenPopped = true;
             gameObject.SetActive(false);
         }
+
+       
     }
 
     // Update is called once per frame
@@ -89,5 +100,11 @@ public class BubbleBehavior : MonoBehaviour
             rb.AddForce(Vector3.right * Random.Range(-shake_speed, shake_speed));
             rb.AddForce(Vector3.up * Random.Range(-shake_speed, shake_speed));
             transform.Rotate(0, 0, shake_intensity);
+    }
+
+    void BubbleResidueOnPop(Vector3 popSpot) {
+        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.3f, .3f), popSpot.y + Random.Range(-.1f, .1f)), Quaternion.identity);
+        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.1f, .1f), popSpot.y + Random.Range(-.3f, .3f)), Quaternion.identity);
+        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.2f, .2f), popSpot.y + Random.Range(-.2f, .2f)), Quaternion.identity);
     }
 }
