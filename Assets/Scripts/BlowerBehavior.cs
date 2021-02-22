@@ -13,15 +13,18 @@ public class BlowerBehavior : MonoBehaviour
 	float lastX;
 	public bool releaseToFire;
 	public float rotateSpeed;
-	public KeyCode TurnLeft;
-	public KeyCode TurnRight;
-	public KeyCode BubbleButton;
+	public KeyCode turnLeft;
+	public KeyCode turnRight;
+	public KeyCode bubbleButton;
+	public float blowBackMultiplier = 1;
+	float maxForce;
 	Rigidbody2D rigidbody;
 
 	// Start is called before the first frame update
 	void Start()
 	{
 		breathTimer = 0;
+		maxForce = breath.keys[breath.length - 1].value;
 		rigidbody = GetComponent<Rigidbody2D>();
 	}
 
@@ -82,9 +85,10 @@ public class BlowerBehavior : MonoBehaviour
 	void ReleaseBubble() {
 		curBubble.transform.parent = null;
 		Vector3 movementVector = curBubble.transform.position - transform.position;
-		movementVector = movementVector.normalized * breath.Evaluate(breathTimer);
-		curBubble.GetComponent<Rigidbody2D>().AddForce(movementVector, ForceMode2D.Impulse);
-		rigidbody.AddForce(-movementVector * 2, ForceMode2D.Impulse);
+		Vector3 bubbleVector = movementVector.normalized * (maxForce - breath.Evaluate(breathTimer)) * blowBackMultiplier;
+		curBubble.GetComponent<Rigidbody2D>().AddForce(bubbleVector, ForceMode2D.Impulse);
+		Vector3 playerVector = -movementVector.normalized * (breath.Evaluate(breathTimer)) * blowBackMultiplier;
+		rigidbody.AddForce(playerVector, ForceMode2D.Impulse);
 		curBubble = null;
 		breathTimer = 0;
 		releaseTimer = 0;
@@ -92,9 +96,9 @@ public class BlowerBehavior : MonoBehaviour
 	}
 	
 	void HandleRotation() {
-		if(Input.GetKey(TurnRight)) {
+		if(Input.GetKey(turnRight)) {
 			transform.Rotate(0, 0, -rotateSpeed * Time.deltaTime);
-		} else if(Input.GetKey(TurnLeft)) {
+		} else if(Input.GetKey(turnLeft)) {
 			transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
 		} else {
 			if(Input.mousePosition.x > lastX) transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
@@ -108,14 +112,14 @@ public class BlowerBehavior : MonoBehaviour
 	}
 
 	bool ButtonActive() {
-		return Input.GetMouseButton(0) || Input.GetKey(BubbleButton);
+		return Input.GetMouseButton(0) || Input.GetKey(bubbleButton);
 	}
 
 	bool ButtonPressed() {
-		return Input.GetMouseButtonDown(0) || Input.GetKeyDown(BubbleButton);
+		return Input.GetMouseButtonDown(0) || Input.GetKeyDown(bubbleButton);
 	}
 
 	bool ButtonReleased() {
-		return Input.GetMouseButtonUp(0) || Input.GetKeyUp(BubbleButton);
+		return Input.GetMouseButtonUp(0) || Input.GetKeyUp(bubbleButton);
 	}
 }

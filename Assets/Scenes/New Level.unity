@@ -1851,9 +1851,10 @@ MonoBehaviour:
   releaseThreshold: 0.2
   releaseToFire: 1
   rotateSpeed: 200
-  TurnLeft: 97
-  TurnRight: 100
-  BubbleButton: 32
+  turnLeft: 97
+  turnRight: 100
+  bubbleButton: 32
+  blowBackMultiplier: 2
 --- !u!212 &1759005862
 SpriteRenderer:
   m_ObjectHideFlags: 0
