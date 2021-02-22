@@ -1,0 +1,593 @@
+fileFormatVersion: 2
+guid: 6749582794a34494eb5c3d1ca3900f2d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3999122602013753659
+    second: Gum spritesheet_0
+  - first:
+      213: 201839466406557249
+    second: Gum spritesheet_1
+  - first:
+      213: 1280893768569333780
+    second: Gum spritesheet_2
+  - first:
+      213: -112682059105809734
+    second: Gum spritesheet_3
+  - first:
+      213: 8516734257988092647
+    second: Gum spritesheet_4
+  - first:
+      213: 5710692681649534351
+    second: Gum spritesheet_5
+  - first:
+      213: -1894635407825771587
+    second: Gum spritesheet_6
+  - first:
+      213: -2211007356037789543
+    second: Gum spritesheet_7
+  - first:
+      213: -6156340390112075012
+    second: Gum spritesheet_8
+  - first:
+      213: -7245849835609680299
+    second: Gum spritesheet_9
+  - first:
+      213: -2801427908289362109
+    second: Gum spritesheet_10
+  - first:
+      213: 2294656098341650077
+    second: Gum spritesheet_0
+  - first:
+      213: 3598861736655499328
+    second: Gum spritesheet_1
+  - first:
+      213: 2250249568241063404
+    second: Gum spritesheet_2
+  - first:
+      213: 8037821621839291850
+    second: Gum spritesheet_3
+  - first:
+      213: -608623483327683802
+    second: Gum spritesheet_4
+  - first:
+      213: 6989082006554370781
+    second: Gum spritesheet_5
+  - first:
+      213: 2637524939813389979
+    second: Gum spritesheet_6
+  - first:
+      213: 5655689008722385551
+    second: Gum spritesheet_7
+  - first:
+      213: 4938909340514563812
+    second: Gum spritesheet_8
+  - first:
+      213: 2627771107165466122
+    second: Gum spritesheet_9
+  - first:
+      213: 5879377151839033550
+    second: Gum spritesheet_10
+  - first:
+      213: -8271137435030805315
+    second: Gum spritesheet_11
+  - first:
+      213: -4343978391242110568
+    second: Gum spritesheet_12
+  - first:
+      213: -3079581643273916291
+    second: Gum spritesheet_13
+  - first:
+      213: 284123065420684721
+    second: Gum spritesheet_14
+  - first:
+      213: 6635445904732116175
+    second: Gum spritesheet_15
+  - first:
+      213: 3136131368667792473
+    second: Gum spritesheet_16
+  - first:
+      213: -656348271938033960
+    second: Gum spritesheet_17
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 750
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Gum spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1746
+        width: 334
+        height: 508
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e7657509148df10800000000000000
+      internalID: 2294656098341650077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gum spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 1754
+        width: 419
+        height: 490
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 040b8119ea9b1f130800000000000000
+      internalID: 3598861736655499328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gum spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 1646
+        y: 1601
+        width: 540
+        height: 735
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce51cfa5f0e7a3f10800000000000000
+      internalID: 2250249568241063404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gum spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 2548
+        y: 1866
+        width: 241
+        height: 271
+      alignment: 9
+      pivot: {x: 0.48335487, y: 0.10032423}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac56fa9cd241c8f60800000000000000
+      internalID: 8037821621839291850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gum spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 3193
+        y: 1849
+        width: 234
+        height: 256
+      alignment: 9
+      pivot: {x: 0.4485698, y: 0.10824585}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 623ea42aa2cbd87f0800000000000000
+      internalID: -608623483327683802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gum spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 772
+        y: 1828
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd26fb22e053ef060800000000000000
+      internalID: 6989082006554370781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gum spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 1786
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b968fc365fe5a9420800000000000000
+      internalID: 2637524939813389979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gum spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 1370
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8a9af4303b0d7e40800000000000000
+      internalID: 5655689008722385551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gum spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 1213
+        width: 302
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e6ba33b0e78a8440800000000000000
+      internalID: 4938909340514563812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gum spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 1254
+        width: 307
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0ee1a146e7b77420800000000000000
+      internalID: 2627771107165466122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gum spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 2484
+        y: 73
+        width: 1343
+        height: 1349
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec8d9eb8e5eb79150800000000000000
+      internalID: 5879377151839033550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gum spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 1324
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db4ad804354073d80800000000000000
+      internalID: -8271137435030805315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gum spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 1068
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8998a062ba617b3c0800000000000000
+      internalID: -4343978391242110568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gum spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 776
+        width: 253
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7038dfcfc02345d0800000000000000
+      internalID: -3079581643273916291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gum spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 799
+        width: 131
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bd15e23c6861f300800000000000000
+      internalID: 284123065420684721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gum spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 764
+        width: 139
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc4d0ede4e6d51c50800000000000000
+      internalID: 6635445904732116175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gum spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 798
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95447662dd6c58b20800000000000000
+      internalID: 3136131368667792473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gum spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 1529
+        y: 656
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d6213269be24e6f0800000000000000
+      internalID: -656348271938033960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

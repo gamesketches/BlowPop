@@ -92,7 +92,7 @@ public class BubbleBehavior : MonoBehaviour
     {
         if (haveCollided)
         {
-            Wobble();
+         //   Wobble();
         }
     }
 
