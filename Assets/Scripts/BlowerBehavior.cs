@@ -13,6 +13,9 @@ public class BlowerBehavior : MonoBehaviour
 	float lastX;
 	public bool releaseToFire;
 	public float rotateSpeed;
+	public KeyCode TurnLeft;
+	public KeyCode TurnRight;
+	public KeyCode BubbleButton;
 	Rigidbody2D rigidbody;
 
 	// Start is called before the first frame update
@@ -26,6 +29,7 @@ public class BlowerBehavior : MonoBehaviour
 	void Update()
 	{
 		BubbleBlowingLogic();
+		HandleRotation();
 	}
 
 	void BubbleBlowingLogic() {
@@ -42,10 +46,7 @@ public class BlowerBehavior : MonoBehaviour
 				{
 					breathTimer += Time.deltaTime;
 					BlowUpBubble();
-					if(Input.mousePosition.x > lastX) transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
-					else if(Input.mousePosition.x < lastX) transform.Rotate(0, 0, -rotateSpeed * Time.deltaTime);
-					lastX = Input.mousePosition.x;
-				}
+									}
 			} else if(ButtonPressed()){
 				CreateBubble();
 							}
@@ -58,6 +59,16 @@ public class BlowerBehavior : MonoBehaviour
 				BlowUpBubble();
 			}
 		}
+	}
+
+	void CreateBubble() {
+		//curBubble = Instantiate<GameObject>(bubblePrefab, transform.position + (transform.forward * 1f), Quaternion.identity); 
+		curBubble = Instantiate <GameObject>(bubblePrefab, transform.forward * .25f + transform.position, transform.rotation);
+
+		curBubble.transform.parent = transform;
+		//curBubble.transform.localPosition = Vector3.up * 0.2f;
+		lastX = Input.mousePosition.x;
+		curBubble.GetComponent<Rigidbody2D>().velocity = rigidbody.velocity;
 	}
 
 	void BlowUpBubble() {
@@ -80,14 +91,16 @@ public class BlowerBehavior : MonoBehaviour
 		
 	}
 	
-	void CreateBubble() {
-		//curBubble = Instantiate<GameObject>(bubblePrefab, transform.position + (transform.forward * 1f), Quaternion.identity); 
-		curBubble = Instantiate <GameObject>(bubblePrefab, transform.forward * .25f + transform.position, transform.rotation);
-
-		curBubble.transform.parent = transform;
-		//curBubble.transform.localPosition = Vector3.up * 0.2f;
-		lastX = Input.mousePosition.x;
-		curBubble.GetComponent<Rigidbody2D>().velocity = rigidbody.velocity;
+	void HandleRotation() {
+		if(Input.GetKey(TurnRight)) {
+			transform.Rotate(0, 0, -rotateSpeed * Time.deltaTime);
+		} else if(Input.GetKey(TurnLeft)) {
+			transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
+		} else {
+			if(Input.mousePosition.x > lastX) transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
+			else if(Input.mousePosition.x < lastX) transform.Rotate(0, 0, -rotateSpeed * Time.deltaTime);
+			lastX = Input.mousePosition.x;
+		}
 	}
 
 	public void UpdateDrag(float newDrag) {
@@ -95,14 +108,14 @@ public class BlowerBehavior : MonoBehaviour
 	}
 
 	bool ButtonActive() {
-		return Input.GetMouseButton(0) || Input.GetKey(KeyCode.Space);
+		return Input.GetMouseButton(0) || Input.GetKey(BubbleButton);
 	}
 
 	bool ButtonPressed() {
-		return Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space);
+		return Input.GetMouseButtonDown(0) || Input.GetKeyDown(BubbleButton);
 	}
 
 	bool ButtonReleased() {
-		return Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.Space);
+		return Input.GetMouseButtonUp(0) || Input.GetKeyUp(BubbleButton);
 	}
 }
