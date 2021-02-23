@@ -131,6 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 34877982}
   - component: {fileID: 34877981}
+  - component: {fileID: 34877983}
   m_Layer: 0
   m_Name: Tooth Wall (5)
   m_TagString: Untagged
@@ -202,6 +203,48 @@ Transform:
   m_Father: {fileID: 1354351821}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -107.22001}
+--- !u!60 &34877983
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34877980}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.17472675, y: 0.25733334}
+    newSize: {x: 0.3374494, y: 0.25733334}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.08742887, y: -0.0208966}
+      - {x: 0.030733587, y: 0.048683967}
+      - {x: 0.017848298, y: 0.12599571}
+      - {x: 0.010117124, y: 0.12857276}
+      - {x: -0.005345225, y: 0.12857276}
+      - {x: -0.031115806, y: 0.11053336}
+      - {x: -0.056886386, y: 0.08476278}
+      - {x: -0.08523402, y: 0.017759271}
+      - {x: -0.08781108, y: -0.0131654255}
+      - {x: -0.08781108, y: -0.041513063}
+      - {x: -0.08523402, y: -0.067283645}
+      - {x: -0.059463445, y: -0.103362456}
+      - {x: -0.015653457, y: -0.12655598}
+      - {x: 0.035887703, y: -0.12655598}
+      - {x: 0.05392711, y: -0.12140186}
+      - {x: 0.08485181, y: -0.08790011}
+      - {x: 0.08742887, y: -0.07759187}
 --- !u!1 &108140122
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,90 +344,6 @@ Transform:
   m_Father: {fileID: 2001935575}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -10}
---- !u!1001 &164852682
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1671680770526959336, guid: d68aa439ac38d42c98a6cc3479e9d639,
-        type: 3}
-      propertyPath: m_Name
-      value: Bubble
-      objectReference: {fileID: 0}
-    - target: {fileID: 6573850540147936859, guid: d68aa439ac38d42c98a6cc3479e9d639,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 6573850540147936859, guid: d68aa439ac38d42c98a6cc3479e9d639,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 6573850540147936859, guid: d68aa439ac38d42c98a6cc3479e9d639,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6573850540147936859, guid: d68aa439ac38d42c98a6cc3479e9d639,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6573850540147936859, guid: d68aa439ac38d42c98a6cc3479e9d639,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6573850540147936859, guid: d68aa439ac38d42c98a6cc3479e9d639,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.8572131
-      objectReference: {fileID: 0}
-    - target: {fileID: 6573850540147936859, guid: d68aa439ac38d42c98a6cc3479e9d639,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.5149619
-      objectReference: {fileID: 0}
-    - target: {fileID: 6573850540147936859, guid: d68aa439ac38d42c98a6cc3479e9d639,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6573850540147936859, guid: d68aa439ac38d42c98a6cc3479e9d639,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6573850540147936859, guid: d68aa439ac38d42c98a6cc3479e9d639,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6573850540147936859, guid: d68aa439ac38d42c98a6cc3479e9d639,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -118.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 6573850540147936859, guid: d68aa439ac38d42c98a6cc3479e9d639,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6573850540147936859, guid: d68aa439ac38d42c98a6cc3479e9d639,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6573850540147936859, guid: d68aa439ac38d42c98a6cc3479e9d639,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d68aa439ac38d42c98a6cc3479e9d639, type: 3}
 --- !u!1 &177422838
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,6 +630,7 @@ GameObject:
   m_Component:
   - component: {fileID: 293148156}
   - component: {fileID: 293148155}
+  - component: {fileID: 293148157}
   m_Layer: 0
   m_Name: Tooth Wall
   m_TagString: Untagged
@@ -743,6 +703,51 @@ Transform:
   m_Father: {fileID: 1354351821}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 61.924004}
+--- !u!60 &293148157
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293148154}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.3374494, y: 0.25733334}
+    newSize: {x: 0.3374494, y: 0.25733334}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.16914411, y: 0.0051320167}
+      - {x: 0.16914411, y: 0.04121083}
+      - {x: 0.15883587, y: 0.069558464}
+      - {x: 0.12275706, y: 0.10306022}
+      - {x: 0.071215905, y: 0.12367669}
+      - {x: 0.019674743, y: 0.1288308}
+      - {x: -0.070522286, y: 0.1288308}
+      - {x: -0.09113875, y: 0.12625374}
+      - {x: -0.11690933, y: 0.11594551}
+      - {x: -0.15041108, y: 0.08502082}
+      - {x: -0.16329637, y: 0.061827295}
+      - {x: -0.16329637, y: -0.01290739}
+      - {x: -0.13237168, y: -0.06187149}
+      - {x: -0.104024045, y: -0.09021913}
+      - {x: -0.065368176, y: -0.115989715}
+      - {x: -0.04217465, y: -0.12629795}
+      - {x: 0.05059944, y: -0.12629795}
+      - {x: 0.06863885, y: -0.11856677}
+      - {x: 0.112448834, y: -0.09279619}
+      - {x: 0.14595059, y: -0.05414032}
 --- !u!1 &330696608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,6 +1370,7 @@ GameObject:
   m_Component:
   - component: {fileID: 967781131}
   - component: {fileID: 967781130}
+  - component: {fileID: 967781132}
   m_Layer: 0
   m_Name: Tooth Wall (4)
   m_TagString: Untagged
@@ -1436,6 +1442,48 @@ Transform:
   m_Father: {fileID: 1354351821}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30.102001}
+--- !u!60 &967781132
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967781129}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.17472675, y: 0.25733334}
+    newSize: {x: 0.3374494, y: 0.25733334}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.08742887, y: -0.0208966}
+      - {x: 0.030733587, y: 0.048683967}
+      - {x: 0.017848298, y: 0.12599571}
+      - {x: 0.010117124, y: 0.12857276}
+      - {x: -0.005345225, y: 0.12857276}
+      - {x: -0.031115806, y: 0.11053336}
+      - {x: -0.056886386, y: 0.08476278}
+      - {x: -0.08523402, y: 0.017759271}
+      - {x: -0.08781108, y: -0.0131654255}
+      - {x: -0.08781108, y: -0.041513063}
+      - {x: -0.08523402, y: -0.067283645}
+      - {x: -0.059463445, y: -0.103362456}
+      - {x: -0.015653457, y: -0.12655598}
+      - {x: 0.035887703, y: -0.12655598}
+      - {x: 0.05392711, y: -0.12140186}
+      - {x: 0.08485181, y: -0.08790011}
+      - {x: 0.08742887, y: -0.07759187}
 --- !u!1 &1354351820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,6 +1530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1401989642}
   - component: {fileID: 1401989641}
+  - component: {fileID: 1401989643}
   m_Layer: 0
   m_Name: Tooth Wall (3)
   m_TagString: Untagged
@@ -1554,6 +1603,51 @@ Transform:
   m_Father: {fileID: 1354351821}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -231.719}
+--- !u!60 &1401989643
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401989640}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.3374494, y: 0.25733334}
+    newSize: {x: 0.3374494, y: 0.25733334}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.16914411, y: 0.0051320167}
+      - {x: 0.16914411, y: 0.04121083}
+      - {x: 0.15883587, y: 0.069558464}
+      - {x: 0.12275706, y: 0.10306022}
+      - {x: 0.071215905, y: 0.12367669}
+      - {x: 0.019674743, y: 0.1288308}
+      - {x: -0.070522286, y: 0.1288308}
+      - {x: -0.09113875, y: 0.12625374}
+      - {x: -0.11690933, y: 0.11594551}
+      - {x: -0.15041108, y: 0.08502082}
+      - {x: -0.16329637, y: 0.061827295}
+      - {x: -0.16329637, y: -0.01290739}
+      - {x: -0.13237168, y: -0.06187149}
+      - {x: -0.104024045, y: -0.09021913}
+      - {x: -0.065368176, y: -0.115989715}
+      - {x: -0.04217465, y: -0.12629795}
+      - {x: 0.05059944, y: -0.12629795}
+      - {x: 0.06863885, y: -0.11856677}
+      - {x: 0.112448834, y: -0.09279619}
+      - {x: 0.14595059, y: -0.05414032}
 --- !u!1 &1429412413
 GameObject:
   m_ObjectHideFlags: 0
@@ -2127,6 +2221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1839535065}
   - component: {fileID: 1839535064}
+  - component: {fileID: 1839535066}
   m_Layer: 0
   m_Name: Tooth Wall (1)
   m_TagString: Untagged
@@ -2199,6 +2294,51 @@ Transform:
   m_Father: {fileID: 1354351821}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -47.788002}
+--- !u!60 &1839535066
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839535063}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.3374494, y: 0.25733334}
+    newSize: {x: 0.3374494, y: 0.25733334}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.16914411, y: 0.0051320167}
+      - {x: 0.16914411, y: 0.04121083}
+      - {x: 0.15883587, y: 0.069558464}
+      - {x: 0.12275706, y: 0.10306022}
+      - {x: 0.071215905, y: 0.12367669}
+      - {x: 0.019674743, y: 0.1288308}
+      - {x: -0.070522286, y: 0.1288308}
+      - {x: -0.09113875, y: 0.12625374}
+      - {x: -0.11690933, y: 0.11594551}
+      - {x: -0.15041108, y: 0.08502082}
+      - {x: -0.16329637, y: 0.061827295}
+      - {x: -0.16329637, y: -0.01290739}
+      - {x: -0.13237168, y: -0.06187149}
+      - {x: -0.104024045, y: -0.09021913}
+      - {x: -0.065368176, y: -0.115989715}
+      - {x: -0.04217465, y: -0.12629795}
+      - {x: 0.05059944, y: -0.12629795}
+      - {x: 0.06863885, y: -0.11856677}
+      - {x: 0.112448834, y: -0.09279619}
+      - {x: 0.14595059, y: -0.05414032}
 --- !u!1 &1872749642
 GameObject:
   m_ObjectHideFlags: 0
@@ -2308,6 +2448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1952314236}
   - component: {fileID: 1952314235}
+  - component: {fileID: 1952314237}
   m_Layer: 0
   m_Name: Tooth Wall (2)
   m_TagString: Untagged
@@ -2380,6 +2521,51 @@ Transform:
   m_Father: {fileID: 1354351821}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -131.188}
+--- !u!60 &1952314237
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952314234}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.3374494, y: 0.25733334}
+    newSize: {x: 0.3374494, y: 0.25733334}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.16914411, y: 0.0051320167}
+      - {x: 0.16914411, y: 0.04121083}
+      - {x: 0.15883587, y: 0.069558464}
+      - {x: 0.12275706, y: 0.10306022}
+      - {x: 0.071215905, y: 0.12367669}
+      - {x: 0.019674743, y: 0.1288308}
+      - {x: -0.070522286, y: 0.1288308}
+      - {x: -0.09113875, y: 0.12625374}
+      - {x: -0.11690933, y: 0.11594551}
+      - {x: -0.15041108, y: 0.08502082}
+      - {x: -0.16329637, y: 0.061827295}
+      - {x: -0.16329637, y: -0.01290739}
+      - {x: -0.13237168, y: -0.06187149}
+      - {x: -0.104024045, y: -0.09021913}
+      - {x: -0.065368176, y: -0.115989715}
+      - {x: -0.04217465, y: -0.12629795}
+      - {x: 0.05059944, y: -0.12629795}
+      - {x: 0.06863885, y: -0.11856677}
+      - {x: 0.112448834, y: -0.09279619}
+      - {x: 0.14595059, y: -0.05414032}
 --- !u!1 &2001935574
 GameObject:
   m_ObjectHideFlags: 0
