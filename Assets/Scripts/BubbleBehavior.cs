@@ -16,6 +16,7 @@ public class BubbleBehavior : MonoBehaviour
     BubbleBehavior myConnectedBubble;
     bool beenPopped;
     public GameObject residue;
+    public GameObject myTape;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -39,10 +40,18 @@ public class BubbleBehavior : MonoBehaviour
 
         if (collision.gameObject.tag == "Bubble")
         {
-             
-          
+         
+
             if (!haveCollided)
             {
+                //if (Mathf.Abs(collision.gameObject.transform.localScale.x - transform.localScale.x) < 1.5f)
+                if(collision.gameObject.transform.localScale.x > transform.localScale.x)
+                {
+                    Vector3 closestCollPoint = collision.contacts[0].point;
+                    GameObject tempTape = Instantiate(myTape, new Vector3(closestCollPoint.x, closestCollPoint.y), Quaternion.identity);
+                    tempTape.transform.localScale = new Vector3(gameObject.transform.localScale.x * .76f, gameObject.transform.localScale.y * .5f, gameObject.transform.localScale.z * .2f);
+                    tempTape.transform.parent = gameObject.transform;
+                }
                 myJoint = gameObject.AddComponent<HingeJoint2D>();
                 myJoint.connectedBody = collision.gameObject.GetComponent<Rigidbody2D>();
                 myConnectedBubble = myJoint.connectedBody.GetComponent<BubbleBehavior>();

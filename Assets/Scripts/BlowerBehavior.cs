@@ -101,9 +101,9 @@ public class BlowerBehavior : MonoBehaviour
 		} else if(Input.GetKey(turnLeft)) {
 			transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
 		} else {
-			if(Input.mousePosition.x > lastX) transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
-			else if(Input.mousePosition.x < lastX) transform.Rotate(0, 0, -rotateSpeed * Time.deltaTime);
-			lastX = Input.mousePosition.x;
+			//if(Input.mousePosition.x > lastX) transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
+			//else if(Input.mousePosition.x < lastX) transform.Rotate(0, 0, -rotateSpeed * Time.deltaTime);
+			//lastX = Input.mousePosition.x;
 		}
 	}
 

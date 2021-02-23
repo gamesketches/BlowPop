@@ -100,6 +100,7 @@ MonoBehaviour:
   shake_speed: 0.5
   shake_intensity: 1
   residue: {fileID: 266548669063727663, guid: b28e4dd06eb5f4cc0bfcefcd74d6bd84, type: 3}
+  myTape: {fileID: 7258842604026260984, guid: ad10186adfe1446668c40c7154421436, type: 3}
 --- !u!58 &8543922193717202965
 CircleCollider2D:
   m_ObjectHideFlags: 0
