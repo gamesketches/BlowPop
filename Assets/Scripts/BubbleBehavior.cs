@@ -78,7 +78,8 @@ public class BubbleBehavior : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody2D>();
         circCol = gameObject.GetComponent<CircleCollider2D>();
         circCol.radius = Random.Range(.09f, .11f);
-        
+        shake_intensity = transform.localScale.x;
+        shake_speed = transform.localScale.x - .5f;
     }
 
 
