@@ -33,8 +33,11 @@ public class BubbleBehavior : MonoBehaviour
 
         if (collision.gameObject.tag == "Tooth")
         {
-            PopMyself();
-            BubbleResidueOnPop(collision.transform.position);
+            if (beenBlown)
+            {
+                PopMyself();
+                BubbleResidueOnPop(collision.transform.position);
+            }
         }
 
 
@@ -107,6 +110,10 @@ public class BubbleBehavior : MonoBehaviour
     {
         if (haveCollided)
         {
+           
+        }
+
+        if (beenBlown) {
             Wobble();
         }
 
