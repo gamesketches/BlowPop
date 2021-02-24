@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8543922193717202965}
   - component: {fileID: 4258366044404984165}
   m_Layer: 0
-  m_Name: Bubble
+  m_Name: Bubble 2
   m_TagString: Bubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingOrder: 3
   m_Sprite: {fileID: -112682059105809734, guid: 6749582794a34494eb5c3d1ca3900f2d,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.2216981, g: 0.9826162, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -215,7 +215,7 @@ TrailRenderer:
   m_Time: 5
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.8459211
+    widthMultiplier: 0.8270332
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -370,7 +370,7 @@ TrailRenderer:
   m_Time: 5
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1.034733
+    widthMultiplier: 1.0491475
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -432,7 +432,7 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 65535
+      atime1: 18504
       atime2: 0
       atime3: 0
       atime4: 0

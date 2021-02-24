@@ -66,7 +66,7 @@ public class BlowerBehavior : MonoBehaviour
 
 	void CreateBubble() {
 		//curBubble = Instantiate<GameObject>(bubblePrefab, transform.position + (transform.forward * 1f), Quaternion.identity); 
-		curBubble = Instantiate <GameObject>(bubblePrefab, transform.forward * .5f + transform.position, transform.rotation);
+		curBubble = Instantiate <GameObject>(bubblePrefab, transform.forward * 1f + transform.position, transform.rotation);
 
 		curBubble.transform.parent = transform;
 		//curBubble.transform.localPosition = Vector3.up * 0.2f;
@@ -87,11 +87,13 @@ public class BlowerBehavior : MonoBehaviour
 		Vector3 movementVector = curBubble.transform.position - transform.position;
 		Vector3 bubbleVector = movementVector.normalized * (maxForce - breath.Evaluate(breathTimer)) * blowBackMultiplier;
 		curBubble.GetComponent<Rigidbody2D>().AddForce(bubbleVector, ForceMode2D.Impulse);
+		curBubble.GetComponent<BubbleBehavior>().beenBlown = true;
 		Vector3 playerVector = -movementVector.normalized * (breath.Evaluate(breathTimer)) * blowBackMultiplier;
 		rigidbody.AddForce(playerVector, ForceMode2D.Impulse);
 		curBubble = null;
 		breathTimer = 0;
 		releaseTimer = 0;
+		
 		
 	}
 	

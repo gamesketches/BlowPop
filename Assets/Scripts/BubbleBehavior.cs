@@ -17,12 +17,17 @@ public class BubbleBehavior : MonoBehaviour
     bool beenPopped;
     public GameObject residue;
     public GameObject myTape;
+    public bool beenBlown;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Blower")
         {
-
+            if (beenBlown)
+            {
+                PopMyself();
+                BubbleResidueOnPop(collision.transform.position);
+            }
             
         }
 
@@ -104,6 +109,8 @@ public class BubbleBehavior : MonoBehaviour
         {
             Wobble();
         }
+
+        print(beenBlown);
     }
 
     void Wobble() {
