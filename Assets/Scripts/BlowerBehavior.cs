@@ -19,6 +19,8 @@ public class BlowerBehavior : MonoBehaviour
 	public float blowBackMultiplier = 1;
 	float maxForce;
 	Rigidbody2D rigidbody;
+	float stickyness;
+	public float stickynessMultiplier;
 
 	// Start is called before the first frame update
 	void Start()
@@ -26,6 +28,7 @@ public class BlowerBehavior : MonoBehaviour
 		breathTimer = 0;
 		maxForce = breath.keys[breath.length - 1].value;
 		rigidbody = GetComponent<Rigidbody2D>();
+		stickyness = 0;
 	}
 
 	// Update is called once per frame
@@ -33,6 +36,7 @@ public class BlowerBehavior : MonoBehaviour
 	{
 		BubbleBlowingLogic();
 		HandleRotation();
+		UpdateStickyness();
 	}
 
 	void BubbleBlowingLogic() {
@@ -64,6 +68,12 @@ public class BlowerBehavior : MonoBehaviour
 		}
 	}
 
+	void UpdateStickyness() {
+		stickyness -= rigidbody.velocity.normalized.magnitude * Time.deltaTime;
+		if(stickyness < 0) stickyness = 0;
+		rigidbody.drag = 1.5f + stickyness;
+	}
+
 	void CreateBubble() {
 		//curBubble = Instantiate<GameObject>(bubblePrefab, transform.position + (transform.forward * 1f), Quaternion.identity); 
 		curBubble = Instantiate <GameObject>(bubblePrefab, transform.forward * 1f + transform.position, transform.rotation);
@@ -93,8 +103,6 @@ public class BlowerBehavior : MonoBehaviour
 		curBubble = null;
 		breathTimer = 0;
 		releaseTimer = 0;
-		
-		
 	}
 	
 	void HandleRotation() {
@@ -111,6 +119,10 @@ public class BlowerBehavior : MonoBehaviour
 
 	public void UpdateDrag(float newDrag) {
 		rigidbody.drag = newDrag;
+	}
+
+	public void AttachResidue(float size) {
+		stickyness += size * stickynessMultiplier;
 	}
 
 	bool ButtonActive() {

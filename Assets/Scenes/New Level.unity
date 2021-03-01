@@ -2261,6 +2261,7 @@ MonoBehaviour:
   turnRight: 275
   bubbleButton: 303
   blowBackMultiplier: 2
+  stickynessMultiplier: 4
 --- !u!212 &1132847098
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3453,6 +3454,7 @@ MonoBehaviour:
   turnRight: 100
   bubbleButton: 304
   blowBackMultiplier: 2
+  stickynessMultiplier: 4
 --- !u!212 &1759005862
 SpriteRenderer:
   m_ObjectHideFlags: 0

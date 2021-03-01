@@ -25,6 +25,7 @@ public class BubbleBehavior : MonoBehaviour
         {
             if (beenBlown)
             {
+				collision.gameObject.GetComponent<BlowerBehavior>().AttachResidue(transform.localScale.x);
                 PopMyself();
                 BubbleResidueOnPop(collision.transform.position);
             }
