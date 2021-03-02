@@ -17,10 +17,12 @@ public class BlowerBehavior : MonoBehaviour
 	public KeyCode turnRight;
 	public KeyCode bubbleButton;
 	public float blowBackMultiplier = 1;
+	TrailRenderer bubbleSmear;
 	float maxForce;
 	Rigidbody2D rigidbody;
 	float stickyness;
 	public float stickynessMultiplier;
+	float timeSinceLastHit;
 
 	// Start is called before the first frame update
 	void Start()
@@ -29,6 +31,9 @@ public class BlowerBehavior : MonoBehaviour
 		maxForce = breath.keys[breath.length - 1].value;
 		rigidbody = GetComponent<Rigidbody2D>();
 		stickyness = 0;
+		bubbleSmear = GetComponent<TrailRenderer>();
+		bubbleSmear.widthMultiplier = 0.1f;
+		timeSinceLastHit = -1;
 	}
 
 	// Update is called once per frame
@@ -37,6 +42,7 @@ public class BlowerBehavior : MonoBehaviour
 		BubbleBlowingLogic();
 		HandleRotation();
 		UpdateStickyness();
+		if(timeSinceLastHit >= 0) timeSinceLastHit += Time.deltaTime;
 	}
 
 	void BubbleBlowingLogic() {
@@ -72,6 +78,7 @@ public class BlowerBehavior : MonoBehaviour
 		stickyness -= rigidbody.velocity.normalized.magnitude * Time.deltaTime;
 		if(stickyness < 0) stickyness = 0;
 		rigidbody.drag = 1.5f + stickyness;
+		bubbleSmear.startWidth = stickyness;
 	}
 
 	void CreateBubble() {
@@ -123,6 +130,22 @@ public class BlowerBehavior : MonoBehaviour
 
 	public void AttachResidue(float size) {
 		stickyness += size * stickynessMultiplier;
+		bubbleSmear.AddPosition(transform.position);
+		AnimationCurve curBubbleSmear = bubbleSmear.widthCurve;
+		if(curBubbleSmear.keys.Length == 1) {
+			timeSinceLastHit = 0;
+			Keyframe[] newFrames = new Keyframe[2] {new Keyframe(stickyness, 0f), new Keyframe(0, Time.deltaTime)};
+			curBubbleSmear.keys = newFrames;
+		} else {
+			Keyframe[] newFrames = new Keyframe[curBubbleSmear.keys.Length + 1];
+			newFrames[0] = new Keyframe(stickyness, 0f);
+			for(int i = 0; i < curBubbleSmear.keys.Length; i++) {
+				curBubbleSmear.keys[i].time += timeSinceLastHit;
+				newFrames[i+1] = curBubbleSmear.keys[i];
+			}
+			bubbleSmear.widthCurve.keys = newFrames;
+			timeSinceLastHit = 0;
+		}
 	}
 
 	bool ButtonActive() {
