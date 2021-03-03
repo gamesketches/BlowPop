@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 266548669063727664}
   - component: {fileID: 266548669063727667}
   m_Layer: 0
-  m_Name: Residue
+  m_Name: Residue 2
   m_TagString: Sticky
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingOrder: 12
   m_Sprite: {fileID: 7440801005904036832, guid: e499e563eb076433391c8f234a448ec7,
     type: 3}
-  m_Color: {r: 1, g: 0.6462264, b: 0.955476, a: 0.84313726}
+  m_Color: {r: 0.2235294, g: 0.61837924, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

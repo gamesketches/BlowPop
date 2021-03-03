@@ -87,7 +87,6 @@ public class BlowerBehavior : MonoBehaviour
 	void BlowUpBubble() {
 		float curScalar = breath.Evaluate(breathTimer);
 		curBubble.transform.localScale = new Vector3(curScalar, curScalar, curScalar);
-
 		//curBubble.transform.position = transform.position + (transform.forward * 1f); //+ (transform.up * .6f)
 		curBubble.transform.localPosition = new Vector3(0, .05f, 0);
 	}
@@ -96,7 +95,7 @@ public class BlowerBehavior : MonoBehaviour
 		curBubble.transform.parent = null;
 		Vector3 movementVector = curBubble.transform.position - transform.position;
 		Vector3 bubbleVector = movementVector.normalized * (maxForce - breath.Evaluate(breathTimer)) * blowBackMultiplier;
-		curBubble.GetComponent<Rigidbody2D>().AddForce(bubbleVector, ForceMode2D.Impulse);
+		curBubble.GetComponent<Rigidbody2D>().AddForce(bubbleVector * 2, ForceMode2D.Impulse);
 		curBubble.GetComponent<BubbleBehavior>().beenBlown = true;
 		Vector3 playerVector = -movementVector.normalized * (breath.Evaluate(breathTimer)) * blowBackMultiplier;
 		rigidbody.AddForce(playerVector, ForceMode2D.Impulse);
@@ -135,5 +134,11 @@ public class BlowerBehavior : MonoBehaviour
 
 	bool ButtonReleased() {
 		return Input.GetMouseButtonUp(0) || Input.GetKeyUp(bubbleButton);
+	}
+
+	public void EarlyPopBubble() {
+		curBubble = null;
+		breathTimer = 0;
+		releaseTimer = 0;
 	}
 }

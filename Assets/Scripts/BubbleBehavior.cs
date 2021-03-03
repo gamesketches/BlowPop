@@ -23,22 +23,44 @@ public class BubbleBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "Blower")
         {
-            if (beenBlown)
+            if (collision.gameObject.transform != gameObject.transform.parent)
             {
-				collision.gameObject.GetComponent<BlowerBehavior>().AttachResidue(transform.localScale.x);
-                PopMyself();
-                BubbleResidueOnPop(collision.transform.position);
+                if (beenBlown)
+                {
+                    collision.gameObject.GetComponent<BlowerBehavior>().AttachResidue(transform.localScale.x);
+                    PopMyself();
+                    BubbleResidueOnPop(collision.transform.position);
+                }
+                else
+                {
+                    if (collision.gameObject.transform != gameObject.transform.parent)
+                    {
+                        PopMyself();
+                        BubbleResidueOnPlayer(collision.transform.position, collision.transform);
+                        transform.parent.GetComponent<BlowerBehavior>().EarlyPopBubble();
+                    }
+
+                }
             }
             
         }
 
         if (collision.gameObject.tag == "Tooth")
         {
-            if (beenBlown)
+
+
+
+            if (transform.parent != null)
             {
                 PopMyself();
                 BubbleResidueOnPop(collision.transform.position);
+                transform.parent.GetComponent<BlowerBehavior>().EarlyPopBubble();
             }
+            else {
+                PopMyself();
+                BubbleResidueOnPop(collision.transform.position);
+            }
+             
         }
 
 
@@ -114,11 +136,11 @@ public class BubbleBehavior : MonoBehaviour
            
         }
 
-        if (beenBlown) {
+        //if (beenBlown) {
             Wobble();
-        }
+        //}
 
-        print(beenBlown);
+        //print(beenBlown);
     }
 
     void Wobble() {
@@ -131,5 +153,15 @@ public class BubbleBehavior : MonoBehaviour
         Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.3f, .3f), popSpot.y + Random.Range(-.1f, .1f)), Quaternion.identity);
         Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.1f, .1f), popSpot.y + Random.Range(-.3f, .3f)), Quaternion.identity);
         Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.2f, .2f), popSpot.y + Random.Range(-.2f, .2f)), Quaternion.identity);
+    }
+
+    void BubbleResidueOnPlayer(Vector3 popSpot, Transform blower)
+    {
+        GameObject tempRes = Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.3f, .3f), popSpot.y + Random.Range(-.1f, .1f)), Quaternion.identity);
+        tempRes.transform.parent = blower;
+        GameObject tempRes2 = Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.1f, .1f), popSpot.y + Random.Range(-.3f, .3f)), Quaternion.identity);
+        tempRes2.transform.parent = blower;
+        GameObject tempRes3 = Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.2f, .2f), popSpot.y + Random.Range(-.2f, .2f)), Quaternion.identity);
+        tempRes3.transform.parent = blower;
     }
 }
