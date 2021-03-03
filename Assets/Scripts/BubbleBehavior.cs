@@ -19,6 +19,23 @@ public class BubbleBehavior : MonoBehaviour
     public GameObject myTape;
     public bool beenBlown;
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Toothbrush")
+        {
+            if (transform.parent != null)
+            {
+                PopMyself();
+                BubbleResidueOnPop(collision.transform.position);
+                transform.parent.GetComponent<BlowerBehavior>().EarlyPopBubble();
+            }
+            else
+            {
+                PopMyself();
+                BubbleResidueOnPop(collision.transform.position);
+            }
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Blower")
@@ -136,11 +153,11 @@ public class BubbleBehavior : MonoBehaviour
            
         }
 
-        //if (beenBlown) {
+        if (beenBlown) {
             Wobble();
-        //}
+        }
 
-        //print(beenBlown);
+       // print(beenBlown);
     }
 
     void Wobble() {

@@ -10,6 +10,7 @@ TagManager:
   - Tooth
   - Arena
   - Sticky
+  - Toothbrush
   layers:
   - Default
   - TransparentFX

@@ -88,14 +88,14 @@ public class BlowerBehavior : MonoBehaviour
 		float curScalar = breath.Evaluate(breathTimer);
 		curBubble.transform.localScale = new Vector3(curScalar, curScalar, curScalar);
 		//curBubble.transform.position = transform.position + (transform.forward * 1f); //+ (transform.up * .6f)
-		curBubble.transform.localPosition = new Vector3(0, .05f, 0);
+		curBubble.transform.localPosition = new Vector3(0, .075f, 0);
 	}
 
 	void ReleaseBubble() {
 		curBubble.transform.parent = null;
 		Vector3 movementVector = curBubble.transform.position - transform.position;
 		Vector3 bubbleVector = movementVector.normalized * (maxForce - breath.Evaluate(breathTimer)) * blowBackMultiplier;
-		curBubble.GetComponent<Rigidbody2D>().AddForce(bubbleVector * 2, ForceMode2D.Impulse);
+		curBubble.GetComponent<Rigidbody2D>().AddForce(bubbleVector, ForceMode2D.Impulse);
 		curBubble.GetComponent<BubbleBehavior>().beenBlown = true;
 		Vector3 playerVector = -movementVector.normalized * (breath.Evaluate(breathTimer)) * blowBackMultiplier;
 		rigidbody.AddForce(playerVector, ForceMode2D.Impulse);
