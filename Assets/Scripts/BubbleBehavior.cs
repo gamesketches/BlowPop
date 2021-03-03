@@ -21,6 +21,8 @@ public class BubbleBehavior : MonoBehaviour
     public GameObject myTape;
     public bool beenBlown;
 
+    public GameObject myStretch;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Toothbrush")
@@ -49,6 +51,7 @@ public class BubbleBehavior : MonoBehaviour
                     collision.gameObject.GetComponent<BlowerBehavior>().AttachResidue(transform.localScale.x);
                     PopMyself();
                     BubbleResidueOnPlayer(collision.transform.position, collision.transform);
+                    CreateStretchyResidue(collision.transform.position, collision.transform);
                 }
                 else
                 {
@@ -71,9 +74,9 @@ public class BubbleBehavior : MonoBehaviour
 
             if (transform.parent != null)
             {
-                PopMyself();
-                BubbleResidueOnPop(collision.transform.position);
-                transform.parent.GetComponent<BlowerBehavior>().EarlyPopBubble();
+                //PopMyself();
+                //BubbleResidueOnPop(collision.transform.position);
+                //transform.parent.GetComponent<BlowerBehavior>().EarlyPopBubble();
             }
             else {
                 PopMyself();
@@ -182,5 +185,10 @@ public class BubbleBehavior : MonoBehaviour
         tempRes2.transform.parent = blower;
         GameObject tempRes3 = Instantiate(playerResidue, new Vector3(popSpot.x + Random.Range(-.2f, .2f), popSpot.y + Random.Range(-.2f, .2f)), Quaternion.identity);
         tempRes3.transform.parent = blower;
+    }
+
+    void CreateStretchyResidue(Vector3 popSpot, Transform blower) {
+        GameObject tempStretch = Instantiate(myStretch, blower.transform.position, Quaternion.identity);
+        tempStretch.GetComponent<GumStretchBehavior>().myTarget = blower;
     }
 }
