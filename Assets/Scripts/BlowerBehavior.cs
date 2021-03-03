@@ -94,9 +94,8 @@ public class BlowerBehavior : MonoBehaviour
 	void BlowUpBubble() {
 		float curScalar = breath.Evaluate(breathTimer);
 		curBubble.transform.localScale = new Vector3(curScalar, curScalar, curScalar);
-
 		//curBubble.transform.position = transform.position + (transform.forward * 1f); //+ (transform.up * .6f)
-		curBubble.transform.localPosition = new Vector3(0, .05f, 0);
+		curBubble.transform.localPosition = new Vector3(0, .075f, 0);
 	}
 
 	void ReleaseBubble() {
@@ -158,5 +157,11 @@ public class BlowerBehavior : MonoBehaviour
 
 	bool ButtonReleased() {
 		return Input.GetMouseButtonUp(0) || Input.GetKeyUp(bubbleButton);
+	}
+
+	public void EarlyPopBubble() {
+		curBubble = null;
+		breathTimer = 0;
+		releaseTimer = 0;
 	}
 }

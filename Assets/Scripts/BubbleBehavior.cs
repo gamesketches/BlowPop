@@ -16,29 +16,73 @@ public class BubbleBehavior : MonoBehaviour
     BubbleBehavior myConnectedBubble;
     bool beenPopped;
     public GameObject residue;
+    public GameObject playerResidue;
+
     public GameObject myTape;
     public bool beenBlown;
 
+    public GameObject myStretch;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Toothbrush")
+        {
+            if (transform.parent != null)
+            {
+                PopMyself();
+                BubbleResidueOnPop(transform.position);
+                transform.parent.GetComponent<BlowerBehavior>().EarlyPopBubble();
+            }
+            else
+            {
+                PopMyself();
+                BubbleResidueOnPop(transform.position);
+            }
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Blower")
         {
-            if (beenBlown)
+            if (collision.gameObject.transform != gameObject.transform.parent)
             {
-				collision.gameObject.GetComponent<BlowerBehavior>().AttachResidue(transform.localScale.x);
-                PopMyself();
-                BubbleResidueOnPop(collision.transform.position);
+                if (beenBlown)
+                {
+                    collision.gameObject.GetComponent<BlowerBehavior>().AttachResidue(transform.localScale.x);
+                    PopMyself();
+                    BubbleResidueOnPlayer(collision.transform.position, collision.transform);
+                    CreateStretchyResidue(collision.transform.position, collision.transform);
+                }
+                else
+                {
+                    if (collision.gameObject.transform != gameObject.transform.parent)
+                    {
+                        PopMyself();
+                        BubbleResidueOnPlayer(collision.transform.position, collision.transform);
+                        transform.parent.GetComponent<BlowerBehavior>().EarlyPopBubble();
+                    }
+
+                }
             }
             
         }
 
         if (collision.gameObject.tag == "Tooth")
         {
-            if (beenBlown)
+
+
+
+            if (transform.parent != null)
             {
+                //PopMyself();
+                //BubbleResidueOnPop(collision.transform.position);
+                //transform.parent.GetComponent<BlowerBehavior>().EarlyPopBubble();
+            }
+            else {
                 PopMyself();
                 BubbleResidueOnPop(collision.transform.position);
             }
+             
         }
 
 
@@ -118,7 +162,7 @@ public class BubbleBehavior : MonoBehaviour
             Wobble();
         }
 
-        print(beenBlown);
+       // print(beenBlown);
     }
 
     void Wobble() {
@@ -128,8 +172,23 @@ public class BubbleBehavior : MonoBehaviour
     }
 
     void BubbleResidueOnPop(Vector3 popSpot) {
-        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.3f, .3f), popSpot.y + Random.Range(-.1f, .1f)), Quaternion.identity);
-        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.1f, .1f), popSpot.y + Random.Range(-.3f, .3f)), Quaternion.identity);
-        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.2f, .2f), popSpot.y + Random.Range(-.2f, .2f)), Quaternion.identity);
+        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.6f, .6f), popSpot.y + Random.Range(-.2f, .2f)), Quaternion.identity);
+        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.2f, .2f), popSpot.y + Random.Range(-.5f, .5f)), Quaternion.identity);
+        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.3f, .4f), popSpot.y + Random.Range(-.4f, .3f)), Quaternion.identity);
+    }
+
+    void BubbleResidueOnPlayer(Vector3 popSpot, Transform blower)
+    {
+        GameObject tempRes = Instantiate(playerResidue, new Vector3(popSpot.x + Random.Range(-.3f, .3f), popSpot.y + Random.Range(-.1f, .1f)), Quaternion.identity);
+        tempRes.transform.parent = blower;
+        GameObject tempRes2 = Instantiate(playerResidue, new Vector3(popSpot.x + Random.Range(-.1f, .1f), popSpot.y + Random.Range(-.3f, .3f)), Quaternion.identity);
+        tempRes2.transform.parent = blower;
+        GameObject tempRes3 = Instantiate(playerResidue, new Vector3(popSpot.x + Random.Range(-.2f, .2f), popSpot.y + Random.Range(-.2f, .2f)), Quaternion.identity);
+        tempRes3.transform.parent = blower;
+    }
+
+    void CreateStretchyResidue(Vector3 popSpot, Transform blower) {
+        GameObject tempStretch = Instantiate(myStretch, blower.transform.position, Quaternion.identity);
+        tempStretch.GetComponent<GumStretchBehavior>().myTarget = blower;
     }
 }
