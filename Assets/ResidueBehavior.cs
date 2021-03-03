@@ -10,6 +10,7 @@ public class ResidueBehavior : MonoBehaviour
     {
         if (collision.tag == "Toothbrush") {
             gameObject.SetActive(false);
+           // Destroy(gameObject);
         }
     }
     // Start is called before the first frame update

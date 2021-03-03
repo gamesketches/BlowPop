@@ -16,6 +16,8 @@ public class BubbleBehavior : MonoBehaviour
     BubbleBehavior myConnectedBubble;
     bool beenPopped;
     public GameObject residue;
+    public GameObject playerResidue;
+
     public GameObject myTape;
     public bool beenBlown;
 
@@ -26,13 +28,13 @@ public class BubbleBehavior : MonoBehaviour
             if (transform.parent != null)
             {
                 PopMyself();
-                BubbleResidueOnPop(collision.transform.position);
+                BubbleResidueOnPop(transform.position);
                 transform.parent.GetComponent<BlowerBehavior>().EarlyPopBubble();
             }
             else
             {
                 PopMyself();
-                BubbleResidueOnPop(collision.transform.position);
+                BubbleResidueOnPop(transform.position);
             }
         }
     }
@@ -46,7 +48,7 @@ public class BubbleBehavior : MonoBehaviour
                 {
                     collision.gameObject.GetComponent<BlowerBehavior>().AttachResidue(transform.localScale.x);
                     PopMyself();
-                    BubbleResidueOnPop(collision.transform.position);
+                    BubbleResidueOnPlayer(collision.transform.position, collision.transform);
                 }
                 else
                 {
@@ -167,18 +169,18 @@ public class BubbleBehavior : MonoBehaviour
     }
 
     void BubbleResidueOnPop(Vector3 popSpot) {
-        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.3f, .3f), popSpot.y + Random.Range(-.1f, .1f)), Quaternion.identity);
-        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.1f, .1f), popSpot.y + Random.Range(-.3f, .3f)), Quaternion.identity);
-        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.2f, .2f), popSpot.y + Random.Range(-.2f, .2f)), Quaternion.identity);
+        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.6f, .6f), popSpot.y + Random.Range(-.2f, .2f)), Quaternion.identity);
+        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.2f, .2f), popSpot.y + Random.Range(-.5f, .5f)), Quaternion.identity);
+        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.3f, .4f), popSpot.y + Random.Range(-.4f, .3f)), Quaternion.identity);
     }
 
     void BubbleResidueOnPlayer(Vector3 popSpot, Transform blower)
     {
-        GameObject tempRes = Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.3f, .3f), popSpot.y + Random.Range(-.1f, .1f)), Quaternion.identity);
+        GameObject tempRes = Instantiate(playerResidue, new Vector3(popSpot.x + Random.Range(-.3f, .3f), popSpot.y + Random.Range(-.1f, .1f)), Quaternion.identity);
         tempRes.transform.parent = blower;
-        GameObject tempRes2 = Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.1f, .1f), popSpot.y + Random.Range(-.3f, .3f)), Quaternion.identity);
+        GameObject tempRes2 = Instantiate(playerResidue, new Vector3(popSpot.x + Random.Range(-.1f, .1f), popSpot.y + Random.Range(-.3f, .3f)), Quaternion.identity);
         tempRes2.transform.parent = blower;
-        GameObject tempRes3 = Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.2f, .2f), popSpot.y + Random.Range(-.2f, .2f)), Quaternion.identity);
+        GameObject tempRes3 = Instantiate(playerResidue, new Vector3(popSpot.x + Random.Range(-.2f, .2f), popSpot.y + Random.Range(-.2f, .2f)), Quaternion.identity);
         tempRes3.transform.parent = blower;
     }
 }
