@@ -78,7 +78,7 @@ public class BlowerBehavior : MonoBehaviour
 		stickyness -= rigidbody.velocity.normalized.magnitude * Time.deltaTime;
 		if(stickyness < 0) stickyness = 0;
 		rigidbody.drag = 1.5f + stickyness;
-		bubbleSmear.startWidth = stickyness;
+		//bubbleSmear.startWidth = stickyness;
 	}
 
 	void CreateBubble() {
@@ -129,7 +129,7 @@ public class BlowerBehavior : MonoBehaviour
 
 	public void AttachResidue(float size) {
 		stickyness += size * stickynessMultiplier;
-		bubbleSmear.AddPosition(transform.position);
+		/*bubbleSmear.AddPosition(transform.position);
 		AnimationCurve curBubbleSmear = bubbleSmear.widthCurve;
 		if(curBubbleSmear.keys.Length == 1) {
 			timeSinceLastHit = 0;
@@ -144,7 +144,11 @@ public class BlowerBehavior : MonoBehaviour
 			}
 			bubbleSmear.widthCurve.keys = newFrames;
 			timeSinceLastHit = 0;
-		}
+		}*/
+	}
+
+	public float GetStickyness() {
+		return stickyness;
 	}
 
 	bool ButtonActive() {
