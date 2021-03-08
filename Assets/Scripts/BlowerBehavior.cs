@@ -83,7 +83,7 @@ public class BlowerBehavior : MonoBehaviour
 
 	void CreateBubble() {
 		//curBubble = Instantiate<GameObject>(bubblePrefab, transform.position + (transform.forward * 1f), Quaternion.identity); 
-		curBubble = Instantiate <GameObject>(bubblePrefab, transform.forward * 1f + transform.position, transform.rotation);
+		curBubble = Instantiate <GameObject>(bubblePrefab, transform.forward * 1.3f + transform.position, transform.rotation);
 
 		curBubble.transform.parent = transform;
 		//curBubble.transform.localPosition = Vector3.up * 0.2f;

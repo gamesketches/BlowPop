@@ -17,7 +17,7 @@ public class EnemyGenerator : MonoBehaviour
 	void Start()
     {
         spawnTimer = 0;
-		spawnInterval = Random.Range(5.0f, 10.0f);
+		spawnInterval = Random.Range(7.5f, 12.5f);
     }
 
     // Update is called once per frame
@@ -34,6 +34,7 @@ public class EnemyGenerator : MonoBehaviour
 		{
 			CreateShadow();
 			spawnTimer = 0;
+			spawnInterval = Random.Range(10.0f, 20.0f);
 		}
 	}
 

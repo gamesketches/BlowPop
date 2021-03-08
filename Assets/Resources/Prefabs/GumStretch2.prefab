@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4913850864686797449}
   - component: {fileID: 4913850864686797451}
   m_Layer: 0
-  m_Name: GumStretch 2
+  m_Name: GumStretch2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,9 +167,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -755192153447221378, guid: 58e6acc2215054020a5e468c2db50b2e,
-    type: 3}
-  m_Color: {r: 0.514151, g: 0.8243997, b: 1, a: 0.64705884}
+  m_Sprite: {fileID: 605365790802942381, guid: 58e6acc2215054020a5e468c2db50b2e, type: 3}
+  m_Color: {r: 0.514151, g: 0.8243997, b: 1, a: 0.3137255}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
