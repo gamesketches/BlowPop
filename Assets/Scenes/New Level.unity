@@ -1255,6 +1255,7 @@ MonoBehaviour:
   spawnInterval: 2
   spawnDistanceScalar: 0
   background: {fileID: 330696610}
+  shadow: {fileID: 0}
 --- !u!4 &290204881
 Transform:
   m_ObjectHideFlags: 0
@@ -36832,7 +36833,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2121473024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36848,6 +36849,7 @@ MonoBehaviour:
   spawnInterval: 2
   spawnDistanceScalar: 0
   background: {fileID: 330696610}
+  shadow: {fileID: 6089224425380404122, guid: 456a1215502dc4dddaa80b2e9e15d5c2, type: 3}
 --- !u!4 &2121473025
 Transform:
   m_ObjectHideFlags: 0
@@ -36856,7 +36858,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121473023}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

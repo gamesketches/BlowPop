@@ -10,7 +10,7 @@ public class ToothbrushScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        randomizer = Random.Range(5.0f, 15.0f);
+        randomizer = Random.Range(10.0f, 25.0f);
         anim = gameObject.GetComponent<Animator>();
         anim.enabled = false;
         transform.GetChild(0).gameObject.SetActive(false);
@@ -38,7 +38,7 @@ public class ToothbrushScript : MonoBehaviour
     }
 
     public void ResetAnim() {
-        randomizer = Random.Range(5.0f, 15.0f);
+        randomizer = Random.Range(7.5f, 25.0f);
         anim.enabled = false;
         anim.SetBool("long", false);
         anim.SetBool("short", false);
