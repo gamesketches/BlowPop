@@ -6,8 +6,16 @@ public class ShadowScript : MonoBehaviour
 {
     public GameObject toothEnemy;
 
-    // Start is called before the first frame update
-    void Start()
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.tag == "Shadow")
+    //    {
+    //        Destroy(gameObject);
+    //    }
+
+    //    }
+        // Start is called before the first frame update
+        void Start()
     {
         
     }
@@ -19,8 +27,8 @@ public class ShadowScript : MonoBehaviour
     }
 
     public void SpawnToothEnemy() {
-
-        GameObject newShadow = Instantiate(toothEnemy, new Vector3(transform.position.x, transform.position.y + 10, transform.position.z), Quaternion.identity);
-        newShadow.GetComponent<EnemyBehavior>().myShadow = gameObject.transform;
+     
+            GameObject newShadow = Instantiate(toothEnemy, new Vector3(transform.position.x, transform.position.y + 10, transform.position.z), Quaternion.identity);
+            newShadow.GetComponent<EnemyBehavior>().myShadow = gameObject.transform;
     }
 }

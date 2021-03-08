@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyGenerator : MonoBehaviour
 {
-	public float spawnInterval;
+	 float spawnInterval;
 	public float spawnDistanceScalar;
 	float spawnTimer;
 	public Transform background;
-
+	public LayerMask shadowLayer;
 
 	//public GameObject ToothEnemy;
 	public GameObject shadow;
@@ -17,7 +17,7 @@ public class EnemyGenerator : MonoBehaviour
 	void Start()
     {
         spawnTimer = 0;
-		spawnInterval = Random.Range(7.5f, 12.5f);
+		spawnInterval = Random.Range(6.0f, 10.0f);
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class EnemyGenerator : MonoBehaviour
 		{
 			CreateShadow();
 			spawnTimer = 0;
-			spawnInterval = Random.Range(10.0f, 20.0f);
+			spawnInterval = Random.Range(2.0f, 4.0f);
 		}
 	}
 
@@ -49,7 +49,15 @@ public class EnemyGenerator : MonoBehaviour
 	}
 
 	void CreateShadow() {
-		GameObject newShadow = Instantiate(shadow, new Vector3(transform.position.x + Random.Range(-2.5f, 2.5f), transform.position.y + Random.Range(-2.5f, 2.5f), transform.position.z), Quaternion.identity);
+		Vector3 tempSpawnPos = new Vector3(transform.position.x + Random.Range(-2.5f, 2.5f), transform.position.y + Random.Range(-2.5f, 2.5f), transform.position.z);
 
+		if (Physics2D.OverlapCircle(tempSpawnPos, 1.5f, shadowLayer))
+		{
+			print("too close");
+		}
+		else
+		{
+			GameObject newShadow = Instantiate(shadow, tempSpawnPos, Quaternion.identity);
+		}
 	}
 }
