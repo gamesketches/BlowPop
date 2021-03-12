@@ -127,6 +127,10 @@ public class BlowerBehavior : MonoBehaviour
 		rigidbody.drag = newDrag;
 	}
 
+	public void AdjustDrag(float adjustBy) {
+		rigidbody.drag += adjustBy;
+	}
+
 	public void AttachResidue(float size) {
 		stickyness += size * stickynessMultiplier;
 		/*bubbleSmear.AddPosition(transform.position);
