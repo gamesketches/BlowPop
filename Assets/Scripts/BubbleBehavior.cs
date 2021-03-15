@@ -20,7 +20,7 @@ public class BubbleBehavior : MonoBehaviour
 
     public GameObject myTape;
     public bool beenBlown;
-
+    Animator anim;
     public GameObject myStretch;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -48,6 +48,7 @@ public class BubbleBehavior : MonoBehaviour
             {
                 if (beenBlown)
                 {
+                    anim.SetTrigger("Popped");
                     collision.gameObject.GetComponent<BlowerBehavior>().AttachResidue(transform.localScale.x);
                     PopMyself();
                     BubbleResidueOnPlayer(collision.transform.position, collision.transform);
@@ -57,6 +58,7 @@ public class BubbleBehavior : MonoBehaviour
                 {
                     if (collision.gameObject.transform != gameObject.transform.parent)
                     {
+                        anim.SetTrigger("Popped");
                         PopMyself();
                         BubbleResidueOnPlayer(collision.transform.position, collision.transform);
                         transform.parent.GetComponent<BlowerBehavior>().EarlyPopBubble();
@@ -74,11 +76,13 @@ public class BubbleBehavior : MonoBehaviour
 
             if (transform.parent != null)
             {
+                anim.SetTrigger("Popped");
                 PopMyself();
                 BubbleResidueOnPop(collision.transform.position);
                 transform.parent.GetComponent<BlowerBehavior>().EarlyPopBubble();
             }
             else {
+                anim.SetTrigger("Popped");
                 PopMyself();
                 BubbleResidueOnPop(collision.transform.position);
             }
@@ -88,6 +92,7 @@ public class BubbleBehavior : MonoBehaviour
 
         if (collision.gameObject.tag == "Poppers")
         {
+            anim.SetTrigger("Popped");
             PopMyself();
         }
 
@@ -133,6 +138,7 @@ public class BubbleBehavior : MonoBehaviour
         circCol.radius = Random.Range(.09f, .11f);
         shake_intensity = transform.localScale.x;
         shake_speed = transform.localScale.x - .5f;
+        anim = gameObject.GetComponent<Animator>();
     }
 
 
@@ -144,7 +150,7 @@ public class BubbleBehavior : MonoBehaviour
             //    myConnectedBubble.PopMyself();
             //}
             beenPopped = true;
-            gameObject.SetActive(false);
+           // gameObject.SetActive(false);
         }
 
        
@@ -190,5 +196,8 @@ public class BubbleBehavior : MonoBehaviour
     void CreateStretchyResidue(Vector3 popSpot, Transform blower) {
         GameObject tempStretch = Instantiate(myStretch, blower.transform.position, Quaternion.identity);
         tempStretch.GetComponent<GumStretchBehavior>().myTarget = blower;
+    }
+    public void DisableSelf() {
+        gameObject.SetActive(false);
     }
 }

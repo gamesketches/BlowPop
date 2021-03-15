@@ -100,6 +100,7 @@ public class BlowerBehavior : MonoBehaviour
 
 	void ReleaseBubble() {
 		curBubble.transform.parent = null;
+		curBubble.GetComponent<Animator>().SetTrigger("Blown");
 		Vector3 movementVector = curBubble.transform.position - transform.position;
 		Vector3 bubbleVector = movementVector.normalized * (maxForce - breath.Evaluate(breathTimer)) * blowBackMultiplier;
 		curBubble.GetComponent<Rigidbody2D>().AddForce(bubbleVector, ForceMode2D.Impulse);
