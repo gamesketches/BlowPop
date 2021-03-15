@@ -27,17 +27,17 @@ public class BubbleBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "Toothbrush")
         {
-            if (transform.parent != null)
-            {
-                PopMyself();
-                BubbleResidueOnPop(transform.position);
-                transform.parent.GetComponent<BlowerBehavior>().EarlyPopBubble();
-            }
-            else
-            {
-                PopMyself();
-                BubbleResidueOnPop(transform.position);
-            }
+            //if (transform.parent != null)
+            //{
+            //    PopMyself();
+            //    BubbleResidueOnPop(transform.position);
+            //    transform.parent.GetComponent<BlowerBehavior>().EarlyPopBubble();
+            //}
+            //else
+            //{
+            //    PopMyself();
+            //    BubbleResidueOnPop(transform.position);
+            //}
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -74,9 +74,9 @@ public class BubbleBehavior : MonoBehaviour
 
             if (transform.parent != null)
             {
-                //PopMyself();
-                //BubbleResidueOnPop(collision.transform.position);
-                //transform.parent.GetComponent<BlowerBehavior>().EarlyPopBubble();
+                PopMyself();
+                BubbleResidueOnPop(collision.transform.position);
+                transform.parent.GetComponent<BlowerBehavior>().EarlyPopBubble();
             }
             else {
                 PopMyself();
@@ -172,9 +172,9 @@ public class BubbleBehavior : MonoBehaviour
     }
 
     void BubbleResidueOnPop(Vector3 popSpot) {
-        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.6f, .6f), popSpot.y + Random.Range(-.2f, .2f)), Quaternion.identity);
-        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.2f, .2f), popSpot.y + Random.Range(-.5f, .5f)), Quaternion.identity);
-        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.3f, .4f), popSpot.y + Random.Range(-.4f, .3f)), Quaternion.identity);
+        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.2f, .0f), popSpot.y + Random.Range(-.2f, .2f)), Quaternion.identity);
+        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.2f, .2f), popSpot.y + Random.Range(-.3f, .1f)), Quaternion.identity);
+        Instantiate(residue, new Vector3(popSpot.x + Random.Range(-.3f, .0f), popSpot.y + Random.Range(-.2f, .0f)), Quaternion.identity);
     }
 
     void BubbleResidueOnPlayer(Vector3 popSpot, Transform blower)

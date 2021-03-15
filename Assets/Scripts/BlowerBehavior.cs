@@ -114,8 +114,10 @@ public class BlowerBehavior : MonoBehaviour
 	void HandleRotation() {
 		if(Input.GetKey(turnRight)) {
 			transform.Rotate(0, 0, -rotateSpeed * Time.deltaTime);
+			//rigidbody.AddTorque(-1, ForceMode2D.Force);
 		} else if(Input.GetKey(turnLeft)) {
 			transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
+			//rigidbody.AddTorque(1, ForceMode2D.Force);
 		} else {
 			//if(Input.mousePosition.x > lastX) transform.Rotate(0, 0, rotateSpeed * Time.deltaTime);
 			//else if(Input.mousePosition.x < lastX) transform.Rotate(0, 0, -rotateSpeed * Time.deltaTime);
@@ -168,8 +170,9 @@ public class BlowerBehavior : MonoBehaviour
 	}
 
 	public void EarlyPopBubble() {
-		curBubble = null;
-		breathTimer = 0;
-		releaseTimer = 0;
+		ReleaseBubble();
+		//curBubble = null;
+		//breathTimer = 0;
+		//releaseTimer = 0;
 	}
 }
