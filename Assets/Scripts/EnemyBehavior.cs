@@ -13,6 +13,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         if (collision.gameObject.tag == "Toothbrush" && iveDropped)
         {
+            rb.isKinematic = false;
             //transform.rotation = Quaternion.identity;
             var magnitude = 100;
             var force = transform.position - collision.transform.position;
@@ -41,6 +42,7 @@ public class EnemyBehavior : MonoBehaviour
             if (Vector3.Distance(transform.position, myShadow.transform.position) < 0.001f)
             {
                 transform.GetChild(0).gameObject.SetActive(true);
+                rb.isKinematic = true;
                 iveDropped = true;
 
             }

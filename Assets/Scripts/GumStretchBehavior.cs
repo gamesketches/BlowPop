@@ -10,7 +10,7 @@ public class GumStretchBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scaleChange = new Vector3(+Random.Range(0.004f, 0.005f), +Random.Range(0.004f, 0.006f), +Random.Range(0.005f, 0.005f));
+        scaleChange = new Vector3(+Random.Range(0.06f, 0.02f), +Random.Range(0.04f, 0.02f), +Random.Range(0.04f, 0.05f));
         //scaleChange = new Vector3(+0.001f, +0.001f, +0.001f);
 
         //transform.LookAt(new Vector3(transform.position.x, transform.position.y, transform.parent.position.z));
