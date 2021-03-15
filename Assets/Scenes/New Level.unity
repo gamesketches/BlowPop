@@ -298,7 +298,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -2.48, y: 0}
   serializedVersion: 2
-  m_Radius: 0.81
+  m_Radius: 1.2
 --- !u!212 &8995671
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -446,7 +446,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 34877980}
   m_LocalRotation: {x: -0, y: -0, z: -0.80499697, w: 0.59327894}
-  m_LocalPosition: {x: 4.7, y: -3.07, z: 0.4220792}
+  m_LocalPosition: {x: 4.77, y: -3.09, z: 0.4220792}
   m_LocalScale: {x: 3, y: 3, z: 0}
   m_Children: []
   m_Father: {fileID: 1354351821}
@@ -2804,7 +2804,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -3554,7 +3554,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 60
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -8152,8 +8152,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 523336756}
   m_LocalRotation: {x: -0, y: -0, z: 0.97674865, w: -0.21438785}
-  m_LocalPosition: {x: 1.012, y: -5.714, z: 0.4220792}
-  m_LocalScale: {x: -4, y: 4, z: 0}
+  m_LocalPosition: {x: 1.05, y: -5.79, z: 0.4220792}
+  m_LocalScale: {x: -3.66344, y: 3.66344, z: 0}
   m_Children: []
   m_Father: {fileID: 1354351821}
   m_RootOrder: 10
@@ -9092,7 +9092,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -9842,7 +9842,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 60
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -18884,7 +18884,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -2.48, y: 0}
   serializedVersion: 2
-  m_Radius: 0.81
+  m_Radius: 1.2
 --- !u!212 &716052661
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -21153,7 +21153,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -2.48, y: 0}
   serializedVersion: 2
-  m_Radius: 0.81
+  m_Radius: 1.2
 --- !u!212 &1008328072
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23142,7 +23142,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -2.48, y: 0}
   serializedVersion: 2
-  m_Radius: 0.81
+  m_Radius: 1.2
 --- !u!212 &1354228164
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23548,7 +23548,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -24298,7 +24298,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 60
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -35141,7 +35141,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -35891,7 +35891,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 60
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2

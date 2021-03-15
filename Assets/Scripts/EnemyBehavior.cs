@@ -40,7 +40,6 @@ public class EnemyBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-            gameObject.transform.localScale = new Vector3(Random.Range(1, 2), Random.Range(1, 2), Random.Range(1, 2));
             rb = gameObject.GetComponent<Rigidbody2D>();
             myCol = gameObject.GetComponent<CircleCollider2D>();
     }
@@ -62,6 +61,9 @@ public class EnemyBehavior : MonoBehaviour
                     rb.isKinematic = true;
                     iveDropped = true;
 
+                    //sorting order issues with sprite renderer order
+                   // GetComponent<SpriteRenderer>().sortingOrder = Mathf.RoundToInt(transform.position.y * 100f) * -1;
+                   // transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = gameObject.GetComponent<SpriteRenderer>().sortingOrder + 1;
                 }
 
             }
@@ -70,7 +72,7 @@ public class EnemyBehavior : MonoBehaviour
     }
 
     bool Check4Kill() {
-        if (Physics2D.OverlapCircle(transform.position, 0.5f, blowerLayer))
+        if (Physics2D.OverlapCircle(transform.position, transform.localScale.z/2, blowerLayer))
         {
             return true;
         }

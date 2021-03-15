@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7362852972910029723}
   - component: {fileID: 840958830030983575}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1286659006738546436}
   - component: {fileID: 1493147481285061495}
   - component: {fileID: 7716302691330188549}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tooth Enemy
   m_TagString: Tooth
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 6340169248646172637}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.78165567, y: 0.15, z: -0.73046875}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6340169250596721461}
   - {fileID: 7362852972910029723}
@@ -200,7 +200,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.16
+  m_Radius: 0.22
 --- !u!50 &7716302691330188549
 Rigidbody2D:
   serializedVersion: 4
@@ -232,7 +232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6340169250596721461}
   - component: {fileID: 6340169250596721460}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GroundMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}

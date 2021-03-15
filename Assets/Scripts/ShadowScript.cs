@@ -28,9 +28,10 @@ public class ShadowScript : MonoBehaviour
 
     public void SpawnToothEnemy() {
      
-            GameObject newTooth = Instantiate(toothEnemy, new Vector3(transform.position.x, transform.position.y + 10, transform.position.z), Quaternion.identity);
-          //  newTooth.transform.localScale = new Vector3(Random.Range(1.0f, 2.0f), Random.Range(1.0f, 2.0f), Random.Range(1.0f, 2.0f));
-            newTooth.transform.localScale = new Vector3(2f, 2f, 2f);
+            GameObject newTooth = Instantiate(toothEnemy, new Vector3(transform.position.x, transform.position.y + 10, transform.position.z), Quaternion.identity) as GameObject;
+            float tempSizer = Random.Range(1.0f, 1.75f);
+           // newTooth.transform.localScale = new Vector3(Random.Range(1.0f, 1.5f), Random.Range(1.0f, 1.5f), Random.Range(1.0f, 1.5f));
+            newTooth.transform.localScale = new Vector3(tempSizer, tempSizer, tempSizer);
             newTooth.GetComponent<EnemyBehavior>().myShadow = gameObject.transform;
     }
 }

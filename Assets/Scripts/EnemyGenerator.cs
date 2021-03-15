@@ -17,7 +17,7 @@ public class EnemyGenerator : MonoBehaviour
 	void Start()
     {
         spawnTimer = 0;
-		spawnInterval = Random.Range(6.0f, 10.0f);
+		spawnInterval = Random.Range(5.0f, 10.0f);
     }
 
     // Update is called once per frame
@@ -34,7 +34,7 @@ public class EnemyGenerator : MonoBehaviour
 		{
 			CreateShadow();
 			spawnTimer = 0;
-			spawnInterval = Random.Range(2.0f, 4.0f);
+			spawnInterval = Random.Range(3.0f, 5.0f);
 		}
 	}
 
@@ -51,9 +51,10 @@ public class EnemyGenerator : MonoBehaviour
 	void CreateShadow() {
 		Vector3 tempSpawnPos = new Vector3(transform.position.x + Random.Range(-2.5f, 2.5f), transform.position.y + Random.Range(-2.5f, 2.5f), transform.position.z);
 
-		if (Physics2D.OverlapCircle(tempSpawnPos, 1.5f, shadowLayer))
+		if (Physics2D.OverlapCircle(tempSpawnPos, 1f, shadowLayer))
 		{
 			print("too close");
+			CreateShadow();
 		}
 		else
 		{
