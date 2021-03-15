@@ -182,6 +182,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myShadow: {fileID: 0}
+  blowerLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!58 &1493147481285061495
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -1725,9 +1725,9 @@ GameObject:
   m_Component:
   - component: {fileID: 338018554}
   - component: {fileID: 338018555}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Arena
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12625,9 +12625,9 @@ GameObject:
   m_Component:
   - component: {fileID: 654188317}
   - component: {fileID: 654188318}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Arena
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18219,9 +18219,9 @@ GameObject:
   m_Component:
   - component: {fileID: 810255228}
   - component: {fileID: 810255229}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Arena
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18564,9 +18564,9 @@ GameObject:
   m_Component:
   - component: {fileID: 894956935}
   - component: {fileID: 894956936}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Arena
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19246,7 +19246,7 @@ GameObject:
   - component: {fileID: 1132847094}
   - component: {fileID: 1132847093}
   - component: {fileID: 1132847100}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Blower 2
   m_TagString: Blower
   m_Icon: {fileID: 0}
@@ -36113,7 +36113,7 @@ GameObject:
   - component: {fileID: 1759005866}
   - component: {fileID: 1759005867}
   - component: {fileID: 1759005868}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Blower
   m_TagString: Blower
   m_Icon: {fileID: 0}
