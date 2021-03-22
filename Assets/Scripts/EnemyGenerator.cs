@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyGenerator : MonoBehaviour
 {
-	 float spawnInterval;
+	float spawnInterval;
 	public float spawnDistanceScalar;
 	float spawnTimer;
 	public Transform background;
 	public LayerMask shadowLayer;
+	public Text gameTimer;
 
 	//public GameObject ToothEnemy;
 	public GameObject shadow;
@@ -36,6 +38,7 @@ public class EnemyGenerator : MonoBehaviour
 			spawnTimer = 0;
 			spawnInterval = Random.Range(3.0f, 5.0f);
 		}
+		gameTimer.text = Time.timeSinceLevelLoad.ToString("f2");
 	}
 
 	void CreateEnemy() {
