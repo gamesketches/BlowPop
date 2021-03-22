@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BlowerBehavior : MonoBehaviour
 {
@@ -23,10 +24,12 @@ public class BlowerBehavior : MonoBehaviour
 	float stickyness;
 	public float stickynessMultiplier;
 	float timeSinceLastHit;
+	AudioSource audio;
 
 	// Start is called before the first frame update
 	void Start()
 	{
+		audio = GetComponent<AudioSource>();
 		breathTimer = 0;
 		maxForce = breath.keys[breath.length - 1].value;
 		rigidbody = GetComponent<Rigidbody2D>();
@@ -110,6 +113,7 @@ public class BlowerBehavior : MonoBehaviour
 		curBubble = null;
 		breathTimer = 0;
 		releaseTimer = 0;
+		audio.Play();
 	}
 	
 	void HandleRotation() {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class EnemyBehavior : MonoBehaviour
@@ -10,6 +11,7 @@ public class EnemyBehavior : MonoBehaviour
     bool iveDropped;
     CircleCollider2D myCol;
     public LayerMask blowerLayer;
+	static float deathAnimationTime = 0.2f;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -54,7 +56,8 @@ public class EnemyBehavior : MonoBehaviour
             {
                 if (Check4Kill())
                 {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+					StartCoroutine(DeathAnimation());
+                    //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 }
                 else {
                     transform.GetChild(0).gameObject.SetActive(true);
@@ -81,4 +84,27 @@ public class EnemyBehavior : MonoBehaviour
             return false;
         }
     }
+
+	IEnumerator DeathAnimation() {
+		float deltaTime = Time.deltaTime;
+		Time.timeScale = 0;
+		Vector3 startPos = transform.position;
+		Vector3 endPos = myShadow.transform.position;
+		for(float t = 0; t < deathAnimationTime; t += deltaTime) {
+			transform.position = Vector3.Lerp(startPos, endPos, t / deathAnimationTime);
+			yield return null;
+		}
+		GameObject screenFlash = GameObject.Find("Canvas").transform.GetChild(0).gameObject;
+		screenFlash.SetActive(true);
+		AudioSource audioSource = GetComponent<AudioSource>();
+		audioSource.Play();
+		yield return new WaitForSecondsRealtime(0.2f);
+		screenFlash.SetActive(false);
+		yield return new WaitForSecondsRealtime(0.45f);
+		audioSource.clip = Resources.Load<AudioClip>("Sound/Wail");
+		audioSource.Play();
+		while(audioSource.isPlaying) yield return null;
+		Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+	}
 }
