@@ -22010,6 +22010,10 @@ MonoBehaviour:
   turnLeft: 276
   turnRight: 275
   bubbleButton: 303
+  moveUp: 273
+  moveDown: 274
+  moveLeft: 276
+  moveRight: 275
   blowBackMultiplier: 5
   stickynessMultiplier: 2
 --- !u!212 &1132847098
@@ -40062,6 +40066,10 @@ MonoBehaviour:
   turnLeft: 97
   turnRight: 100
   bubbleButton: 304
+  moveUp: 119
+  moveDown: 115
+  moveLeft: 97
+  moveRight: 100
   blowBackMultiplier: 5
   stickynessMultiplier: 2
 --- !u!212 &1759005862

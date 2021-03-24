@@ -17,6 +17,11 @@ public class BlowerBehavior : MonoBehaviour
 	public KeyCode turnLeft;
 	public KeyCode turnRight;
 	public KeyCode bubbleButton;
+	public KeyCode moveUp;
+	public KeyCode moveDown;
+	public KeyCode moveLeft;
+	public KeyCode moveRight;
+	static float walkSpeed = 3;
 	public float blowBackMultiplier = 1;
 	TrailRenderer bubbleSmear;
 	float maxForce;
@@ -42,10 +47,26 @@ public class BlowerBehavior : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		HandleMovement();
 		BubbleBlowingLogic();
-		HandleRotation();
+		//HandleRotation();
 		UpdateStickyness();
 		if(timeSinceLastHit >= 0) timeSinceLastHit += Time.deltaTime;
+	}
+
+	void HandleMovement() {
+		if(Input.GetKey(moveUp)) {
+			transform.rotation = Quaternion.Euler(0, 0, 0);
+		} else if(Input.GetKey(moveDown)) {
+			transform.rotation = Quaternion.Euler(0, 0, 180);
+		} else if(Input.GetKey(moveLeft)) {
+			transform.rotation = Quaternion.Euler(0, 0, 90);
+		} else if(Input.GetKey(moveRight)) {
+			transform.rotation = Quaternion.Euler(0, 0, 270);
+		} else {
+			return;
+		}
+		transform.Translate(new Vector3(0, walkSpeed * Time.deltaTime, 0));
 	}
 
 	void BubbleBlowingLogic() {
