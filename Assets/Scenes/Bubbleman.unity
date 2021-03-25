@@ -25723,7 +25723,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.15
 --- !u!114 &1132847094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25810,8 +25810,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.48614156
-      value: 0.7961631
+      time: 0.45496023
+      value: 0.66780615
       inSlope: 0.008771985
       outSlope: 0.008771985
       tangentMode: 0
@@ -25819,32 +25819,23 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.62226456
     - serializedVersion: 3
-      time: 1.0066177
-      value: 1.1919556
-      inSlope: -0.020208124
-      outSlope: -0.020208124
+      time: 0.6694881
+      value: 1.0545709
+      inSlope: 0.4592352
+      outSlope: 0.4592352
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.50711334
-    - serializedVersion: 3
-      time: 1.6137938
-      value: 1.492895
-      inSlope: 0.045914315
-      outSlope: 0.045914315
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 1
-    - serializedVersion: 3
-      time: 2.4998078
-      value: 1.9942425
-      inSlope: 0.2811441
-      outSlope: 0.2811441
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 1
       outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.95475554
+      value: 1.5248519
+      inSlope: 0.021108076
+      outSlope: 0.021108076
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.50711334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -46485,8 +46476,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.48614156
-      value: 0.7961631
+      time: 0.45496023
+      value: 0.66780615
       inSlope: 0.008771985
       outSlope: 0.008771985
       tangentMode: 0
@@ -46494,32 +46485,23 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.62226456
     - serializedVersion: 3
-      time: 1.0066177
-      value: 1.1919556
-      inSlope: -0.020208124
-      outSlope: -0.020208124
+      time: 0.6694881
+      value: 1.0545709
+      inSlope: 0.4592352
+      outSlope: 0.4592352
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.50711334
-    - serializedVersion: 3
-      time: 1.6137938
-      value: 1.492895
-      inSlope: 0.045914315
-      outSlope: 0.045914315
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 1
-    - serializedVersion: 3
-      time: 2.4998078
-      value: 1.9942425
-      inSlope: 0.2811441
-      outSlope: 0.2811441
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 1
       outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.95475554
+      value: 1.5248519
+      inSlope: 0.021108076
+      outSlope: 0.021108076
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.50711334
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -46674,7 +46656,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.15
 --- !u!96 &1759005868
 TrailRenderer:
   serializedVersion: 2

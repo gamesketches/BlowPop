@@ -165,7 +165,7 @@ public class BubbleBehavior : MonoBehaviour
         }
 
         if (beenBlown) {
-            Wobble();
+          //  Wobble();
         }
 
        // print(beenBlown);
