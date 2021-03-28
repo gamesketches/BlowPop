@@ -14,7 +14,7 @@ public class BubbleBehavior : MonoBehaviour
     bool haveCollided;
 
     BubbleBehavior myConnectedBubble;
-    bool beenPopped;
+    public bool beenPopped;
     public GameObject residue;
     public GameObject playerResidue;
 

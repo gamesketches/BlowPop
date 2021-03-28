@@ -23,6 +23,8 @@ public class BlowerBehavior : MonoBehaviour
 	public KeyCode moveRight;
 	static float walkSpeed = 3;
 	public float blowBackMultiplier = 1;
+	float bubbleLimit = 1;
+	List<BubbleBehavior> blownBubbles;
 	TrailRenderer bubbleSmear;
 	float maxForce;
 	Rigidbody2D rigidbody;
@@ -42,6 +44,7 @@ public class BlowerBehavior : MonoBehaviour
 		bubbleSmear = GetComponent<TrailRenderer>();
 		bubbleSmear.widthMultiplier = 0.1f;
 		timeSinceLastHit = -1;
+		blownBubbles = new List<BubbleBehavior>();
 	}
 
 	// Update is called once per frame
@@ -49,6 +52,7 @@ public class BlowerBehavior : MonoBehaviour
 	{
 		HandleMovement();
 		BubbleBlowingLogic();
+		CheckBlownBubbles();
 		//HandleRotation();
 		UpdateStickyness();
 		if(timeSinceLastHit >= 0) timeSinceLastHit += Time.deltaTime;
@@ -84,9 +88,9 @@ public class BlowerBehavior : MonoBehaviour
 					breathTimer += Time.deltaTime;
 					BlowUpBubble();
 									}
-			} else if(ButtonPressed()){
+			} else if(ButtonPressed() && blownBubbles.Count < bubbleLimit){
 				CreateBubble();
-							}
+				}
 		} else if(ButtonReleased() && curBubble) {
 			if(releaseToFire) ReleaseBubble();
 			else releaseTimer = releaseThreshold;
@@ -113,6 +117,7 @@ public class BlowerBehavior : MonoBehaviour
 		//curBubble.transform.localPosition = Vector3.up * 0.2f;
 		lastX = Input.mousePosition.x;
 		curBubble.GetComponent<Rigidbody2D>().velocity = rigidbody.velocity;
+		blownBubbles.Add(curBubble.GetComponent<BubbleBehavior>());
 	}
 
 	void BlowUpBubble() {
@@ -130,11 +135,20 @@ public class BlowerBehavior : MonoBehaviour
 		curBubble.GetComponent<Rigidbody2D>().AddForce(bubbleVector, ForceMode2D.Impulse);
 		curBubble.GetComponent<BubbleBehavior>().beenBlown = true;
 		Vector3 playerVector = -movementVector.normalized * (breath.Evaluate(breathTimer)) * blowBackMultiplier;
-		rigidbody.AddForce(playerVector, ForceMode2D.Impulse);
+		//rigidbody.AddForce(playerVector, ForceMode2D.Impulse);
 		curBubble = null;
 		breathTimer = 0;
 		releaseTimer = 0;
 		audio.Play();
+	}
+
+	void CheckBlownBubbles() {
+		for(int i = 0; i < blownBubbles.Count; i++) {
+			if(blownBubbles[i].beenPopped) {
+				blownBubbles.Remove(blownBubbles[i]);
+				i--;
+			}
+		}
 	}
 	
 	void HandleRotation() {
@@ -193,6 +207,10 @@ public class BlowerBehavior : MonoBehaviour
 
 	bool ButtonReleased() {
 		return Input.GetMouseButtonUp(0) || Input.GetKeyUp(bubbleButton);
+	}
+
+	public void IncreaseBubbleLimit(int increaseBy) {
+		bubbleLimit += increaseBy;
 	}
 
 	public void EarlyPopBubble() {
