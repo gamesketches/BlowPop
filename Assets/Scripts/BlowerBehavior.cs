@@ -111,6 +111,8 @@ public class BlowerBehavior : MonoBehaviour
 
 	void CreateBubble() {
 		//curBubble = Instantiate<GameObject>(bubblePrefab, transform.position + (transform.forward * 1f), Quaternion.identity); 
+		RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.forward * 0.1f);
+		if(hit.collider.tag == "Arena") return;
 		curBubble = Instantiate <GameObject>(bubblePrefab, transform.forward * 1.3f + transform.position, transform.rotation);
 
 		curBubble.transform.parent = transform;
